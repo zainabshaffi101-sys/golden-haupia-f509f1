@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
     <section
       id="testimonials"
       className="relative py-24 px-6 overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF" }}
+      style={{ backgroundColor: "#F7F4EB" }}
     >
       {/* Subtle background accent — faint diagonal rule top-right */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -37,9 +37,9 @@ export default function TestimonialsSection() {
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <circle cx="210" cy="210" r="209.5" stroke="#D4A017" />
-          <circle cx="210" cy="210" r="160" stroke="#D4A017" />
-          <circle cx="210" cy="210" r="110" stroke="#D4A017" />
+          <circle cx="210" cy="210" r="209.5" stroke="#8C5369" />
+          <circle cx="210" cy="210" r="160" stroke="#8C5369" />
+          <circle cx="210" cy="210" r="110" stroke="#8C5369" />
         </svg>
         <svg
           className="absolute -bottom-12 -left-12 opacity-[0.03]"
@@ -50,8 +50,8 @@ export default function TestimonialsSection() {
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <circle cx="160" cy="160" r="159.5" stroke="#0B1F3A" />
-          <circle cx="160" cy="160" r="110" stroke="#0B1F3A" />
+          <circle cx="160" cy="160" r="159.5" stroke="#4A1E2F" />
+          <circle cx="160" cy="160" r="110" stroke="#4A1E2F" />
         </svg>
       </div>
 
@@ -60,27 +60,27 @@ export default function TestimonialsSection() {
         <div className="flex items-center gap-3 mb-4 justify-center">
           <div
             className="h-px w-8 flex-shrink-0"
-            style={{ backgroundColor: "#D4A017" }}
+            style={{ backgroundColor: "#8C5369" }}
           />
           <span
             className="text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: "#D4A017" }}
+            style={{ color: "#8C5369" }}
           >
             Testimonials
           </span>
           <div
             className="h-px w-8 flex-shrink-0"
-            style={{ backgroundColor: "#D4A017" }}
+            style={{ backgroundColor: "#8C5369" }}
           />
         </div>
 
         {/* Headline */}
         <h2
           className="text-3xl sm:text-4xl font-bold text-center leading-tight tracking-tight mb-16 max-w-2xl mx-auto"
-          style={{ color: "#0B1F3A" }}
+          style={{ color: "#4A1E2F" }}
         >
           Kind Words From People{" "}
-          <span style={{ color: "#163B6D" }}>I've Worked With</span>
+          <span style={{ color: "#8C5369" }}>I've Worked With</span>
         </h2>
 
         {/* Cards grid */}
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
         }
         .testimonial-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 20px 50px rgba(11,31,58,0.10);
+          box-shadow: 0 20px 50px rgba(74,30,47,0.10);
         }
       `}</style>
     </section>
@@ -123,19 +123,19 @@ function TestimonialCard({
     <div
       className="testimonial-card relative flex flex-col rounded-2xl p-8 transition-all duration-300"
       style={{
-        backgroundColor: "#F7F8FA",
+        backgroundColor: "#FFFFFF",
         animationDelay: `${0.1 + index * 0.12}s`,
-        boxShadow: "0 2px 16px rgba(11,31,58,0.05)",
+        boxShadow: "0 2px 16px rgba(74,30,47,0.05)",
       }}
     >
-      {/* Gold opening quotation mark */}
+      {/* Mauve opening quotation mark */}
       <div
         className="mb-4 leading-none select-none"
         aria-hidden="true"
         style={{
           fontSize: "5rem",
           lineHeight: "1",
-          color: "#D4A017",
+          color: "#8C5369",
           fontFamily: "Georgia, 'Times New Roman', serif",
           marginTop: "-0.5rem",
           marginLeft: "-0.25rem",
@@ -148,7 +148,7 @@ function TestimonialCard({
       {/* Quote text */}
       <p
         className="text-base leading-relaxed flex-1"
-        style={{ color: "#1F2937" }}
+        style={{ color: "#2B2527" }}
       >
         {quote}
       </p>
@@ -156,7 +156,7 @@ function TestimonialCard({
       {/* Divider */}
       <div
         className="my-6 h-px"
-        style={{ backgroundColor: "rgba(11,31,58,0.08)" }}
+        style={{ backgroundColor: "rgba(74,30,47,0.08)" }}
       />
 
       {/* Attribution */}
@@ -164,28 +164,28 @@ function TestimonialCard({
         {/* Monogram avatar */}
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-          style={{ backgroundColor: "#0B1F3A", color: "#D4A017" }}
+          style={{ backgroundColor: "#4A1E2F", color: "#8C5369" }}
           aria-hidden="true"
         >
           {name.charAt(0)}
         </div>
         <div>
-          <p className="text-sm font-bold" style={{ color: "#0B1F3A" }}>
+          <p className="text-sm font-bold" style={{ color: "#4A1E2F" }}>
             {name}
           </p>
           <p
             className="text-xs mt-0.5 font-medium"
-            style={{ color: "rgba(11,31,58,0.45)" }}
+            style={{ color: "rgba(74,30,47,0.45)" }}
           >
             {title}
           </p>
         </div>
       </div>
 
-      {/* Subtle gold left-border accent */}
+      {/* Subtle mauve left-border accent */}
       <div
         className="absolute left-0 top-8 bottom-8 w-0.5 rounded-full"
-        style={{ backgroundColor: "#D4A017", opacity: 0.5 }}
+        style={{ backgroundColor: "#8C5369", opacity: 0.5 }}
         aria-hidden="true"
       />
     </div>

@@ -56,27 +56,27 @@ function ProjectCard({ project }: { project: Project }) {
     <article
       className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       style={{
-        border: "1px solid rgba(11,31,58,0.1)",
+        border: "1px solid rgba(74,30,47,0.1)",
         boxShadow:
-          "0 2px 12px rgba(11,31,58,0.06), 0 0 1px rgba(11,31,58,0.04)",
+          "0 2px 12px rgba(74,30,47,0.06), 0 0 1px rgba(74,30,47,0.04)",
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 12px 40px rgba(11,31,58,0.12), 0 0 1px rgba(11,31,58,0.08)";
+          "0 12px 40px rgba(74,30,47,0.12), 0 0 1px rgba(74,30,47,0.08)";
         (e.currentTarget as HTMLElement).style.borderColor =
-          "rgba(11,31,58,0.18)";
+          "rgba(74,30,47,0.18)";
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 2px 12px rgba(11,31,58,0.06), 0 0 1px rgba(11,31,58,0.04)";
+          "0 2px 12px rgba(74,30,47,0.06), 0 0 1px rgba(74,30,47,0.04)";
         (e.currentTarget as HTMLElement).style.borderColor =
-          "rgba(11,31,58,0.1)";
+          "rgba(74,30,47,0.1)";
       }}
     >
-      {/* Gold top accent bar */}
+      {/* Mauve top accent bar */}
       <div
         className="h-1 w-full transition-all duration-300 group-hover:h-1.5"
-        style={{ backgroundColor: "#D4A017" }}
+        style={{ backgroundColor: "#8C5369" }}
       />
 
       <div className="p-8 lg:p-10">
@@ -85,7 +85,7 @@ function ProjectCard({ project }: { project: Project }) {
           <span
             className="text-5xl font-black leading-none select-none"
             style={{
-              color: "#D4A017",
+              color: "#8C5369",
               fontFamily: "'Georgia', 'Times New Roman', serif",
               opacity: 0.85,
               letterSpacing: "-0.03em",
@@ -96,7 +96,7 @@ function ProjectCard({ project }: { project: Project }) {
           <span
             className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.12em] shrink-0"
             style={{
-              backgroundColor: "#0B1F3A",
+              backgroundColor: "#4A1E2F",
               color: "#FFFFFF",
             }}
           >
@@ -108,7 +108,7 @@ function ProjectCard({ project }: { project: Project }) {
         <h3
           className="text-xl lg:text-2xl font-bold leading-snug mb-4"
           style={{
-            color: "#0B1F3A",
+            color: "#4A1E2F",
             fontFamily: "'Georgia', 'Times New Roman', serif",
             letterSpacing: "-0.02em",
           }}
@@ -119,7 +119,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Overview */}
         <p
           className="text-sm leading-relaxed mb-8"
-          style={{ color: "#4B5563" }}
+          style={{ color: "#2B2527" }}
         >
           {project.overview}
         </p>
@@ -129,15 +129,15 @@ function ProjectCard({ project }: { project: Project }) {
           {/* Challenge */}
           <div
             className="rounded-xl p-5"
-            style={{ backgroundColor: "#F7F8FA" }}
+            style={{ backgroundColor: "#F7F4EB" }}
           >
             <p
               className="text-xs font-semibold uppercase tracking-[0.14em] mb-2"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               Challenge
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#2B2527" }}>
               {project.challenge}
             </p>
           </div>
@@ -145,15 +145,15 @@ function ProjectCard({ project }: { project: Project }) {
           {/* Approach */}
           <div
             className="rounded-xl p-5"
-            style={{ backgroundColor: "#F7F8FA" }}
+            style={{ backgroundColor: "#F7F4EB" }}
           >
             <p
               className="text-xs font-semibold uppercase tracking-[0.14em] mb-2"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               Approach
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#2B2527" }}>
               {project.approach}
             </p>
           </div>
@@ -161,15 +161,15 @@ function ProjectCard({ project }: { project: Project }) {
           {/* Solution — spans full width */}
           <div
             className="sm:col-span-2 rounded-xl p-5"
-            style={{ backgroundColor: "#F7F8FA" }}
+            style={{ backgroundColor: "#F7F4EB" }}
           >
             <p
               className="text-xs font-semibold uppercase tracking-[0.14em] mb-2"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               Solution
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#2B2527" }}>
               {project.solution}
             </p>
           </div>
@@ -179,18 +179,18 @@ function ProjectCard({ project }: { project: Project }) {
         <div
           className="rounded-xl px-6 py-4 mb-7 flex items-start gap-3"
           style={{
-            backgroundColor: "#0B1F3A",
+            backgroundColor: "#4A1E2F",
           }}
         >
           {/* Left accent */}
           <div
             className="w-0.5 h-full self-stretch rounded-full shrink-0 mt-0.5"
-            style={{ backgroundColor: "#D4A017", minHeight: "1rem" }}
+            style={{ backgroundColor: "#8C5369", minHeight: "1rem" }}
           />
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-[0.14em] mb-1"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               Outcome
             </p>
@@ -210,9 +210,9 @@ function ProjectCard({ project }: { project: Project }) {
               key={tag}
               className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"
               style={{
-                backgroundColor: "rgba(212,160,23,0.1)",
-                color: "#0B1F3A",
-                border: "1px solid rgba(212,160,23,0.3)",
+                backgroundColor: "rgba(140,83,105,0.1)",
+                color: "#4A1E2F",
+                border: "1px solid rgba(140,83,105,0.3)",
               }}
             >
               {tag}
@@ -226,20 +226,20 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 px-6" style={{ backgroundColor: "#FFFFFF" }}>
+    <section id="projects" className="py-20 px-6" style={{ backgroundColor: "#F7F4EB" }}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-14 text-center">
           <p
             className="text-xs font-semibold tracking-[0.2em] uppercase mb-3"
-            style={{ color: "#D4A017" }}
+            style={{ color: "#8C5369" }}
           >
             Featured Projects
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold leading-tight"
             style={{
-              color: "#0B1F3A",
+              color: "#4A1E2F",
               fontFamily: "'Georgia', 'Times New Roman', serif",
               letterSpacing: "-0.02em",
             }}
@@ -250,15 +250,15 @@ export default function ProjectsSection() {
           <div className="mt-5 flex items-center justify-center gap-3">
             <div
               className="h-px w-16"
-              style={{ backgroundColor: "#D4A017", opacity: 0.5 }}
+              style={{ backgroundColor: "#8C5369", opacity: 0.5 }}
             />
             <div
               className="h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: "#D4A017" }}
+              style={{ backgroundColor: "#8C5369" }}
             />
             <div
               className="h-px w-16"
-              style={{ backgroundColor: "#D4A017", opacity: 0.5 }}
+              style={{ backgroundColor: "#8C5369", opacity: 0.5 }}
             />
           </div>
         </div>

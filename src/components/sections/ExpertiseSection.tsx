@@ -8,7 +8,7 @@ type ExpertiseCard = {
 
 const cards: ExpertiseCard[] = [
   {
-    icon: <Calendar className="w-5 h-5" style={{ color: "#0B1F3A" }} />,
+    icon: <Calendar className="w-5 h-5" style={{ color: "#4A1E2F" }} />,
     title: "Executive Support",
     items: [
       "Calendar Management",
@@ -20,7 +20,7 @@ const cards: ExpertiseCard[] = [
     ],
   },
   {
-    icon: <Settings className="w-5 h-5" style={{ color: "#0B1F3A" }} />,
+    icon: <Settings className="w-5 h-5" style={{ color: "#4A1E2F" }} />,
     title: "Operations Management",
     items: [
       "SOP Development",
@@ -32,7 +32,7 @@ const cards: ExpertiseCard[] = [
     ],
   },
   {
-    icon: <CheckSquare className="w-5 h-5" style={{ color: "#0B1F3A" }} />,
+    icon: <CheckSquare className="w-5 h-5" style={{ color: "#4A1E2F" }} />,
     title: "Project Coordination",
     items: [
       "Task Tracking",
@@ -44,7 +44,7 @@ const cards: ExpertiseCard[] = [
     ],
   },
   {
-    icon: <Zap className="w-5 h-5" style={{ color: "#0B1F3A" }} />,
+    icon: <Zap className="w-5 h-5" style={{ color: "#4A1E2F" }} />,
     title: "Productivity Systems",
     items: [
       "Notion",
@@ -64,17 +64,17 @@ export default function ExpertiseSection() {
     <section
       id="expertise"
       className="relative py-20 lg:py-28 overflow-hidden"
-      style={{ backgroundColor: "#F7F8FA" }}
+      style={{ backgroundColor: "#F7F4EB" }}
     >
       {/* Subtle decorative background geometry */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-[0.07] blur-3xl"
-          style={{ backgroundColor: "#163B6D" }}
+          style={{ backgroundColor: "#4A1E2F" }}
         />
         <div
           className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full opacity-[0.07] blur-3xl"
-          style={{ backgroundColor: "#D4A017" }}
+          style={{ backgroundColor: "#8C5369" }}
         />
         {/* Fine dot grid */}
         <svg
@@ -88,7 +88,7 @@ export default function ExpertiseSection() {
               height="28"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="1.5" cy="1.5" r="1.5" fill="#0B1F3A" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#4A1E2F" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#expertise-dots)" />
@@ -105,11 +105,11 @@ export default function ExpertiseSection() {
           <div className="flex items-center gap-3 mb-4">
             <div
               className="h-px w-8 flex-shrink-0"
-              style={{ backgroundColor: "#D4A017" }}
+              style={{ backgroundColor: "#8C5369" }}
             />
             <span
               className="text-xs font-semibold uppercase tracking-[0.2em]"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               What I Do Best
             </span>
@@ -118,18 +118,18 @@ export default function ExpertiseSection() {
           {/* Headline */}
           <h2
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight leading-tight max-w-lg"
-            style={{ color: "#0B1F3A" }}
+            style={{ color: "#4A1E2F" }}
           >
             Areas of{" "}
             <span
               className="relative inline-block"
-              style={{ color: "#0B1F3A" }}
+              style={{ color: "#4A1E2F" }}
             >
               Expertise
-              {/* Gold underline accent */}
+              {/* Mauve underline accent */}
               <span
                 className="absolute -bottom-1 left-0 w-full h-1 rounded-full"
-                style={{ backgroundColor: "#D4A017", opacity: 0.7 }}
+                style={{ backgroundColor: "#8C5369", opacity: 0.7 }}
               />
             </span>
           </h2>
@@ -143,9 +143,9 @@ export default function ExpertiseSection() {
               className="group relative flex flex-col rounded-xl overflow-hidden"
               style={{
                 backgroundColor: "#FFFFFF",
-                borderTop: "4px solid #0B1F3A",
+                borderTop: "4px solid #4A1E2F",
                 boxShadow:
-                  "0 1px 3px rgba(11,31,58,0.06), 0 4px 12px rgba(11,31,58,0.04)",
+                  "0 1px 3px rgba(74,30,47,0.06), 0 4px 12px rgba(74,30,47,0.04)",
                 animation: `sectionFadeUp 0.6s ease-out ${0.1 + i * 0.1}s both`,
                 transition: "transform 0.22s ease, box-shadow 0.22s ease",
               }}
@@ -153,20 +153,20 @@ export default function ExpertiseSection() {
                 (e.currentTarget as HTMLDivElement).style.transform =
                   "translateY(-5px)";
                 (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 8px 28px rgba(11,31,58,0.12), 0 2px 8px rgba(11,31,58,0.06)";
+                  "0 8px 28px rgba(74,30,47,0.12), 0 2px 8px rgba(74,30,47,0.06)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.transform =
                   "translateY(0)";
                 (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 1px 3px rgba(11,31,58,0.06), 0 4px 12px rgba(11,31,58,0.04)";
+                  "0 1px 3px rgba(74,30,47,0.06), 0 4px 12px rgba(74,30,47,0.04)";
               }}
             >
               <div className="p-6 flex flex-col gap-5 flex-1">
-                {/* Icon in gold circle */}
+                {/* Icon in mauve circle */}
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: "#D4A017" }}
+                  style={{ backgroundColor: "#8C5369" }}
                 >
                   {card.icon}
                 </div>
@@ -174,7 +174,7 @@ export default function ExpertiseSection() {
                 {/* Card title */}
                 <h3
                   className="text-base font-bold tracking-tight leading-snug"
-                  style={{ color: "#0B1F3A" }}
+                  style={{ color: "#4A1E2F" }}
                 >
                   {card.title}
                 </h3>
@@ -185,12 +185,12 @@ export default function ExpertiseSection() {
                     <li key={item} className="flex items-start gap-2.5">
                       <Check
                         className="w-3.5 h-3.5 flex-shrink-0 mt-0.5"
-                        style={{ color: "#D4A017" }}
+                        style={{ color: "#8C5369" }}
                         strokeWidth={2.5}
                       />
                       <span
                         className="text-sm leading-snug"
-                        style={{ color: "#1F2937" }}
+                        style={{ color: "#2B2527" }}
                       >
                         {item}
                       </span>
@@ -202,7 +202,7 @@ export default function ExpertiseSection() {
               {/* Subtle hover glow on border */}
               <div
                 className="absolute inset-x-0 top-0 h-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                style={{ backgroundColor: "#D4A017" }}
+                style={{ backgroundColor: "#8C5369" }}
               />
             </div>
           ))}
