@@ -141,8 +141,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "#8C5369" }}>Email</p>
-                <a href="mailto:zainab@example.com" className="text-sm font-medium transition-colors duration-150 hover:underline" style={{ color: "#4A1E2F" }}>
-                  zainab@example.com
+                <a href="mailto:zainabshaffi101@gmail.com" className="text-sm font-medium transition-colors duration-150 hover:underline" style={{ color: "#4A1E2F" }}>
+                  zainabshaffi101@gmail.com
                 </a>
               </div>
             </div>
@@ -157,8 +157,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "#8C5369" }}>LinkedIn</p>
-                <a href="https://linkedin.com/in/zainabshaffi" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-opacity duration-150 hover:opacity-75" style={{ color: "#4A1E2F" }}>
-                  linkedin.com/in/zainabshaffi
+                <a href="https://linkedin.com/in/zainab-adejoke-shaffi-1479ba35a" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-opacity duration-150 hover:opacity-75" style={{ color: "#4A1E2F" }}>
+                  linkedin.com/in/zainab-adejoke-shaffi-1479ba35a
                 </a>
               </div>
             </div>
