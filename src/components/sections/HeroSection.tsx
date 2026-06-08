@@ -91,9 +91,8 @@ export default function HeroSection() {
               animation: "heroFadeIn 0.8s ease-out 0.15s both",
             }}
           >
-            Helping Founders and Executives{" "}
-            <span style={{ color: "#D4A017" }}>Create More Time</span> Through
-            Better Systems and Operational Excellence
+            You're Working in the Business.{" "}
+            <span style={{ color: "#D4A017" }}>Let's Get You Back to Leading It.</span> 
           </h1>
 
           {/* Subheadline */}
@@ -104,9 +103,9 @@ export default function HeroSection() {
               animation: "heroFadeIn 0.8s ease-out 0.3s both",
             }}
           >
-            I partner with busy professionals to streamline operations, organize
-            priorities, and implement systems that improve productivity, reduce
-            bottlenecks, and support sustainable business growth.
+            I partner I help founders and executives eliminate operational bottlenecks, 
+            reduce administrative workload by up to 30%, 
+            and reclaim 15+ hours weekly through structured workflows and reliable executive support.
           </p>
 
           {/* CTA Buttons */}
@@ -170,7 +169,7 @@ export default function HeroSection() {
                 className="text-2xl font-bold"
                 style={{ color: "#D4A017" }}
               >
-                5+
+                2+
               </p>
               <p
                 className="text-xs uppercase tracking-wide mt-0.5"
@@ -188,7 +187,7 @@ export default function HeroSection() {
                 className="text-2xl font-bold"
                 style={{ color: "#D4A017" }}
               >
-                50+
+                15+
               </p>
               <p
                 className="text-xs uppercase tracking-wide mt-0.5"
