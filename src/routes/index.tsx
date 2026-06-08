@@ -41,10 +41,10 @@ function Footer() {
           <div>
             <div className="font-semibold mb-3 text-gray-200">Connect</div>
             <ul className="space-y-2">
-              <li><a href="mailto:zainab@example.com" className="text-gray-400 hover:text-white text-sm transition-colors">zainab@example.com</a></li>
-              <li><a href="https://linkedin.com/in/zainabshaffi" className="text-gray-400 hover:text-white text-sm transition-colors">LinkedIn</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white text-sm transition-colors">Book a Discovery Call</a></li>
-            </ul>
+              <li><a href="mailto:zainabshaffi101@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">zainabshaffi101@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/zainab-adejoke-shaffi-1479ba35a" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">LinkedIn</a></li>
+          <li><a href="https://calendar.app.google/wGTfkEAtLUwzgZuS9" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">Book a Discovery Call</a></li>
+        </ul>
           </div>
         </div>
         <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
