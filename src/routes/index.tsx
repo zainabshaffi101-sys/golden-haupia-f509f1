@@ -18,38 +18,66 @@ export const Route = createFileRoute('/')({
 
 function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0B1F3A' }} className="text-white py-12">
+    <footer style={{ backgroundColor: '#DDD5C8' }} className="py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="text-xl font-bold mb-1">Zainab Shaffi</div>
-            <div style={{ color: '#D4A017' }} className="text-sm font-medium mb-3">Operations & Executive Support Specialist</div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <div className="text-xl font-bold mb-1" style={{ color: '#4A1E2F' }}>Zainab Shaffi</div>
+            <div style={{ color: '#8C5369' }} className="text-sm font-medium mb-3">
+              Operations &amp; Executive Support Specialist
+            </div>
+            <p style={{ color: 'rgba(43,37,39,0.6)' }} className="text-sm leading-relaxed">
               Helping leaders create clarity, efficiency, and sustainable growth through better systems and execution.
             </p>
           </div>
           <div>
-            <div className="font-semibold mb-3 text-gray-200">Quick Links</div>
+            <div className="font-semibold mb-3" style={{ color: '#2B2527' }}>Quick Links</div>
             <ul className="space-y-2">
               {[['About', '#about'], ['Expertise', '#expertise'], ['Projects', '#projects'], ['Process', '#process'], ['Contact', '#contact']].map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} className="text-gray-400 hover:text-white text-sm transition-colors">{label}</a>
+                  <a
+                    href={href}
+                    className="text-sm transition-colors"
+                    style={{ color: 'rgba(43,37,39,0.6)' }}
+                    onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = '#4A1E2F'}
+                    onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(43,37,39,0.6)'}
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <div className="font-semibold mb-3 text-gray-200">Connect</div>
+            <div className="font-semibold mb-3" style={{ color: '#2B2527' }}>Connect</div>
             <ul className="space-y-2">
-              <li><a href="mailto:zainabshaffi101@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">zainabshaffi101@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/zainab-adejoke-shaffi-1479ba35a" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">LinkedIn</a></li>
-          <li><a href="https://calendar.app.google/wGTfkEAtLUwzgZuS9" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">Book a Discovery Call</a></li>
-        </ul>
+              <li>
+                <a href="mailto:zainabshaffi101@gmail.com" className="text-sm transition-colors" style={{ color: 'rgba(43,37,39,0.6)' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = '#4A1E2F'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(43,37,39,0.6)'}>
+                  zainabshaffi101@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/zainab-adejoke-shaffi-1479ba35a" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors" style={{ color: 'rgba(43,37,39,0.6)' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = '#4A1E2F'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(43,37,39,0.6)'}>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://calendar.app.google/wGTfkEAtLUwzgZuS9" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors" style={{ color: 'rgba(43,37,39,0.6)' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = '#4A1E2F'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(43,37,39,0.6)'}>
+                  Book a Discovery Call
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-gray-500 text-sm">© 2024 Zainab Shaffi. All rights reserved.</p>
-          <p style={{ color: '#D4A017' }} className="text-sm italic">"Great systems create great results."</p>
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2" style={{ borderTop: '1px solid rgba(74,30,47,0.2)' }}>
+          <p className="text-sm" style={{ color: 'rgba(43,37,39,0.4)' }}>© 2024 Zainab Shaffi. All rights reserved.</p>
+          <p style={{ color: '#8C5369' }} className="text-sm italic">"Great systems create great results."</p>
         </div>
       </div>
     </footer>
@@ -58,7 +86,7 @@ function Footer() {
 
 function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#F7F4EB' }}>
       <Navigation />
       <main>
         <HeroSection />
