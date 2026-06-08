@@ -1,4 +1,4 @@
-type CircleBg = "navy" | "richblue" | "gold";
+type CircleBg = "wine" | "mauve" | "accent";
 
 interface Tool {
   initial: string;
@@ -13,81 +13,81 @@ const tools: Tool[] = [
     initial: "N",
     name: "Notion",
     category: "Knowledge Management",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "C",
     name: "ClickUp",
     category: "Project Management",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "A",
     name: "Asana",
     category: "Task Management",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "S",
     name: "Slack",
     category: "Communication",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "Z",
     name: "Zoom",
     category: "Video Conferencing",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "C",
     name: "Calendly",
     category: "Scheduling",
-    circleBg: "richblue",
+    circleBg: "mauve",
   },
   {
     initial: "G",
     name: "Google Workspace",
     category: "Productivity Suite",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "M",
     name: "Microsoft Office",
     category: "Document Suite",
-    circleBg: "navy",
+    circleBg: "wine",
   },
   {
     initial: "T",
     name: "Trello",
     category: "Visual Planning",
-    circleBg: "richblue",
+    circleBg: "mauve",
   },
   {
     initial: "L",
     name: "Loom",
     category: "Video Documentation",
-    circleBg: "richblue",
+    circleBg: "mauve",
   },
   {
     initial: "Z",
     name: "Zapier",
     category: "Automation",
-    circleBg: "richblue",
+    circleBg: "mauve",
   },
   {
     initial: "AI",
     name: "ChatGPT / AI Tools",
     category: "AI Assistance",
-    circleBg: "gold",
+    circleBg: "accent",
     darkText: true,
   },
 ];
 
 const circleBgStyles: Record<CircleBg, React.CSSProperties> = {
-  navy: { backgroundColor: "#0B1F3A", color: "#FFFFFF" },
-  richblue: { backgroundColor: "#163B6D", color: "#FFFFFF" },
-  gold: { backgroundColor: "#D4A017", color: "#0B1F3A" },
+  wine: { backgroundColor: "#4A1E2F", color: "#FFFFFF" },
+  mauve: { backgroundColor: "#8C5369", color: "#FFFFFF" },
+  accent: { backgroundColor: "#8C5369", color: "#FFFFFF" },
 };
 
 function ToolCard({ tool }: { tool: Tool }) {
@@ -97,21 +97,21 @@ function ToolCard({ tool }: { tool: Tool }) {
     <div
       className="group flex flex-col items-center text-center bg-white rounded-xl p-5 transition-all duration-300 hover:-translate-y-1"
       style={{
-        border: "1px solid rgba(11,31,58,0.08)",
+        border: "1px solid rgba(74,30,47,0.08)",
         boxShadow:
-          "0 1px 6px rgba(11,31,58,0.05), 0 0 1px rgba(11,31,58,0.04)",
+          "0 1px 6px rgba(74,30,47,0.05), 0 0 1px rgba(74,30,47,0.04)",
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 8px 24px rgba(11,31,58,0.1), 0 0 1px rgba(11,31,58,0.07)";
+          "0 8px 24px rgba(74,30,47,0.1), 0 0 1px rgba(74,30,47,0.07)";
         (e.currentTarget as HTMLElement).style.borderColor =
-          "rgba(11,31,58,0.14)";
+          "rgba(74,30,47,0.14)";
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 1px 6px rgba(11,31,58,0.05), 0 0 1px rgba(11,31,58,0.04)";
+          "0 1px 6px rgba(74,30,47,0.05), 0 0 1px rgba(74,30,47,0.04)";
         (e.currentTarget as HTMLElement).style.borderColor =
-          "rgba(11,31,58,0.08)";
+          "rgba(74,30,47,0.08)";
       }}
     >
       {/* Initial circle */}
@@ -135,7 +135,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       <p
         className="text-sm font-bold leading-snug mb-1"
         style={{
-          color: "#0B1F3A",
+          color: "#4A1E2F",
           fontFamily: "'Georgia', 'Times New Roman', serif",
         }}
       >
@@ -158,21 +158,21 @@ export default function ToolsSection() {
     <section
       id="tools"
       className="py-20 px-6"
-      style={{ backgroundColor: "#F7F8FA" }}
+      style={{ backgroundColor: "#F7F4EB" }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-14 text-center">
           <p
             className="text-xs font-semibold tracking-[0.2em] uppercase mb-3"
-            style={{ color: "#D4A017" }}
+            style={{ color: "#8C5369" }}
           >
             Tools &amp; Platforms
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold leading-tight"
             style={{
-              color: "#0B1F3A",
+              color: "#4A1E2F",
               fontFamily: "'Georgia', 'Times New Roman', serif",
               letterSpacing: "-0.02em",
             }}
@@ -183,15 +183,15 @@ export default function ToolsSection() {
           <div className="mt-5 flex items-center justify-center gap-3">
             <div
               className="h-px w-16"
-              style={{ backgroundColor: "#D4A017", opacity: 0.5 }}
+              style={{ backgroundColor: "#8C5369", opacity: 0.5 }}
             />
             <div
               className="h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: "#D4A017" }}
+              style={{ backgroundColor: "#8C5369" }}
             />
             <div
               className="h-px w-16"
-              style={{ backgroundColor: "#D4A017", opacity: 0.5 }}
+              style={{ backgroundColor: "#8C5369", opacity: 0.5 }}
             />
           </div>
         </div>

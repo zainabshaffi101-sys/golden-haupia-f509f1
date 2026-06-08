@@ -44,33 +44,33 @@ export default function PersonalBrandSection() {
     <section
       id="beyond"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ backgroundColor: "#0B1F3A" }}
+      style={{ backgroundColor: "#4A1E2F" }}
     >
       {/* Background geometric decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large faint circle top-right */}
         <div
           className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full"
-          style={{ backgroundColor: "#163B6D", opacity: 0.25 }}
+          style={{ backgroundColor: "#5E2840", opacity: 0.25 }}
         />
         {/* Smaller circle bottom-left */}
         <div
           className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full"
-          style={{ backgroundColor: "#163B6D", opacity: 0.18 }}
+          style={{ backgroundColor: "#5E2840", opacity: 0.18 }}
         />
         {/* Subtle grid pattern */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="beyond-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#D4A017" strokeWidth="0.5" />
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#8C5369" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#beyond-grid)" />
         </svg>
-        {/* Gold accent bar left edge */}
+        {/* Mauve accent bar left edge */}
         <div
           className="absolute top-0 left-0 w-1 h-full opacity-40"
-          style={{ backgroundColor: "#D4A017" }}
+          style={{ backgroundColor: "#8C5369" }}
         />
       </div>
 
@@ -78,10 +78,10 @@ export default function PersonalBrandSection() {
         {/* Section header */}
         <div className="mb-14 max-w-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 flex-shrink-0" style={{ backgroundColor: "#D4A017" }} />
+            <div className="h-px w-8 flex-shrink-0" style={{ backgroundColor: "#8C5369" }} />
             <span
               className="text-xs font-semibold uppercase tracking-[0.2em]"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               The Person Behind the Systems
             </span>
@@ -107,13 +107,13 @@ export default function PersonalBrandSection() {
               key={title}
               className="group relative rounded-xl p-6 transition-all duration-300 hover:-translate-y-1"
               style={{
-                backgroundColor: "#163B6D",
+                backgroundColor: "#5E2840",
                 boxShadow: "0 4px 20px rgba(0,0,0,0.18)",
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 8px 32px rgba(0,0,0,0.28), 0 0 0 1px rgba(212,160,23,0.2)";
+                  "0 8px 32px rgba(0,0,0,0.28), 0 0 0 1px rgba(140,83,105,0.2)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.boxShadow =
@@ -124,10 +124,10 @@ export default function PersonalBrandSection() {
               <div
                 className="inline-flex items-center justify-center w-11 h-11 rounded-lg mb-5 transition-transform duration-300 group-hover:scale-110"
                 style={{
-                  backgroundColor: "rgba(212,160,23,0.12)",
+                  backgroundColor: "rgba(140,83,105,0.12)",
                 }}
               >
-                <Icon className="w-5 h-5" style={{ color: "#D4A017" }} />
+                <Icon className="w-5 h-5" style={{ color: "#8C5369" }} />
               </div>
 
               {/* Title */}
@@ -146,12 +146,12 @@ export default function PersonalBrandSection() {
                 {description}
               </p>
 
-              {/* Subtle gold corner accent on hover */}
+              {/* Subtle mauve corner accent on hover */}
               <div
                 className="absolute top-0 right-0 w-6 h-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-tr-xl"
                 style={{
-                  borderTop: "2px solid #D4A017",
-                  borderRight: "2px solid #D4A017",
+                  borderTop: "2px solid #8C5369",
+                  borderRight: "2px solid #8C5369",
                 }}
               />
             </div>

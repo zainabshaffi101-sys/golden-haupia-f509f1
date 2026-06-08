@@ -36,7 +36,7 @@ export default function ProcessSection() {
     <section
       id="process"
       className="relative py-24 px-6 overflow-hidden"
-      style={{ backgroundColor: "#F7F8FA" }}
+      style={{ backgroundColor: "#F7F4EB" }}
     >
       {/* Faint grid texture */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -55,7 +55,7 @@ export default function ProcessSection() {
               <path
                 d="M 48 0 L 0 0 0 48"
                 fill="none"
-                stroke="#0B1F3A"
+                stroke="#4A1E2F"
                 strokeWidth="0.4"
               />
             </pattern>
@@ -69,38 +69,38 @@ export default function ProcessSection() {
         <div className="flex items-center gap-3 mb-4 justify-center">
           <div
             className="h-px w-8 flex-shrink-0"
-            style={{ backgroundColor: "#D4A017" }}
+            style={{ backgroundColor: "#8C5369" }}
           />
           <span
             className="text-xs font-semibold uppercase tracking-[0.2em]"
-            style={{ color: "#D4A017" }}
+            style={{ color: "#8C5369" }}
           >
             The Process
           </span>
           <div
             className="h-px w-8 flex-shrink-0"
-            style={{ backgroundColor: "#D4A017" }}
+            style={{ backgroundColor: "#8C5369" }}
           />
         </div>
 
         {/* Headline */}
         <h2
           className="text-3xl sm:text-4xl font-bold text-center leading-tight tracking-tight mb-20 max-w-xl mx-auto"
-          style={{ color: "#0B1F3A" }}
+          style={{ color: "#4A1E2F" }}
         >
           How We Work{" "}
-          <span style={{ color: "#163B6D" }}>Together</span>
+          <span style={{ color: "#8C5369" }}>Together</span>
         </h2>
 
         {/* ── Desktop timeline ── */}
         <div className="hidden md:block relative">
-          {/* Connecting gold line — sits behind the step nodes */}
+          {/* Connecting mauve line — sits behind the step nodes */}
           <div className="absolute top-[3.25rem] left-0 right-0 flex items-center px-[calc(12.5%+0.5rem)] pointer-events-none">
             <div
               className="flex-1 h-px"
               style={{
                 backgroundImage:
-                  "linear-gradient(to right, #D4A017 60%, transparent 100%)",
+                  "linear-gradient(to right, #8C5369 60%, transparent 100%)",
                 opacity: 0.55,
               }}
             />
@@ -114,7 +114,7 @@ export default function ProcessSection() {
               className="relative mx-auto"
               style={{ maxWidth: "100%" }}
             >
-              {/* Full-width gold dashed connector */}
+              {/* Full-width mauve dashed connector */}
               <svg
                 className="absolute top-0 left-0 right-0 w-full overflow-visible"
                 height="2"
@@ -125,7 +125,7 @@ export default function ProcessSection() {
                   y1="1"
                   x2="87.5%"
                   y2="1"
-                  stroke="#D4A017"
+                  stroke="#8C5369"
                   strokeWidth="1.5"
                   strokeDasharray="6 5"
                   opacity="0.6"
@@ -159,11 +159,11 @@ export default function ProcessSection() {
           animation: processReveal 0.65s ease-out both;
         }
         .process-step-card:hover .process-icon-ring {
-          background-color: #0B1F3A;
+          background-color: #4A1E2F;
           transform: scale(1.08);
         }
         .process-step-card:hover .process-icon-ring svg {
-          color: #D4A017;
+          color: #8C5369;
         }
         .process-icon-ring {
           transition: background-color 0.25s ease, transform 0.25s ease;
@@ -194,13 +194,13 @@ function DesktopStep({
     >
       {/* Number bubble + icon cluster */}
       <div className="relative mb-6 flex flex-col items-center">
-        {/* Gold numbered circle */}
+        {/* Mauve numbered circle */}
         <div
           className="w-[3.25rem] h-[3.25rem] rounded-full flex items-center justify-center font-bold text-sm tracking-wider z-10 relative"
           style={{
-            backgroundColor: "#D4A017",
-            color: "#0B1F3A",
-            boxShadow: "0 4px 14px rgba(212,160,23,0.35)",
+            backgroundColor: "#8C5369",
+            color: "#FFFFFF",
+            boxShadow: "0 4px 14px rgba(140,83,105,0.35)",
           }}
         >
           {number}
@@ -209,17 +209,17 @@ function DesktopStep({
         <div
           className="process-icon-ring mt-4 w-14 h-14 rounded-xl flex items-center justify-center"
           style={{
-            backgroundColor: "rgba(22,59,109,0.08)",
+            backgroundColor: "rgba(140,83,105,0.08)",
           }}
         >
-          <Icon size={22} className="text-[#163B6D]" />
+          <Icon size={22} className="text-[#8C5369]" />
         </div>
       </div>
 
       {/* Title */}
       <h3
         className="text-base font-bold mb-3 tracking-tight"
-        style={{ color: "#0B1F3A" }}
+        style={{ color: "#4A1E2F" }}
       >
         {title}
       </h3>
@@ -227,7 +227,7 @@ function DesktopStep({
       {/* Description */}
       <p
         className="text-sm leading-relaxed"
-        style={{ color: "#1F2937" }}
+        style={{ color: "#2B2527" }}
       >
         {description}
       </p>
@@ -262,9 +262,9 @@ function MobileStep({
         <div
           className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10"
           style={{
-            backgroundColor: "#D4A017",
-            color: "#0B1F3A",
-            boxShadow: "0 3px 10px rgba(212,160,23,0.3)",
+            backgroundColor: "#8C5369",
+            color: "#FFFFFF",
+            boxShadow: "0 3px 10px rgba(140,83,105,0.3)",
           }}
         >
           {number}
@@ -275,7 +275,7 @@ function MobileStep({
             className="flex-1 w-px mt-2"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(212,160,23,0.5) 0%, rgba(212,160,23,0.1) 100%)",
+                "linear-gradient(to bottom, rgba(140,83,105,0.5) 0%, rgba(140,83,105,0.1) 100%)",
               minHeight: "2.5rem",
             }}
           />
@@ -288,20 +288,20 @@ function MobileStep({
         <div className="flex items-center gap-3 mb-2">
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={{ backgroundColor: "rgba(22,59,109,0.08)" }}
+            style={{ backgroundColor: "rgba(140,83,105,0.08)" }}
           >
-            <Icon size={17} className="text-[#163B6D]" />
+            <Icon size={17} className="text-[#8C5369]" />
           </div>
           <h3
             className="text-base font-bold tracking-tight"
-            style={{ color: "#0B1F3A" }}
+            style={{ color: "#4A1E2F" }}
           >
             {title}
           </h3>
         </div>
         <p
           className="text-sm leading-relaxed"
-          style={{ color: "#1F2937" }}
+          style={{ color: "#2B2527" }}
         >
           {description}
         </p>

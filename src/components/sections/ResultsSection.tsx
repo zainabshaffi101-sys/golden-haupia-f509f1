@@ -39,19 +39,19 @@ export default function ResultsSection() {
     <section
       id="results"
       className="relative py-20 lg:py-28 overflow-hidden"
-      style={{ backgroundColor: "#0B1F3A" }}
+      style={{ backgroundColor: "#4A1E2F" }}
     >
       {/* Background depth layers */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large soft radial glow top-right */}
         <div
           className="absolute -top-32 right-0 w-[480px] h-[480px] rounded-full opacity-20 blur-3xl"
-          style={{ backgroundColor: "#163B6D" }}
+          style={{ backgroundColor: "#5E2840" }}
         />
         {/* Bottom-left accent glow */}
         <div
           className="absolute -bottom-24 -left-16 w-80 h-80 rounded-full opacity-15 blur-3xl"
-          style={{ backgroundColor: "#D4A017" }}
+          style={{ backgroundColor: "#8C5369" }}
         />
         {/* Fine grid overlay */}
         <svg
@@ -68,17 +68,17 @@ export default function ResultsSection() {
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
-                stroke="#D4A017"
+                stroke="#8C5369"
                 strokeWidth="0.5"
               />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#results-grid)" />
         </svg>
-        {/* Vertical gold rule left edge */}
+        {/* Vertical mauve rule left edge */}
         <div
           className="absolute top-0 left-0 w-px h-full opacity-20"
-          style={{ backgroundColor: "#D4A017" }}
+          style={{ backgroundColor: "#8C5369" }}
         />
       </div>
 
@@ -92,11 +92,11 @@ export default function ResultsSection() {
           <div className="flex items-center gap-3 mb-4">
             <div
               className="h-px w-8 flex-shrink-0"
-              style={{ backgroundColor: "#D4A017" }}
+              style={{ backgroundColor: "#8C5369" }}
             />
             <span
               className="text-xs font-semibold uppercase tracking-[0.2em]"
-              style={{ color: "#D4A017" }}
+              style={{ color: "#8C5369" }}
             >
               Outcomes, Not Activities
             </span>
@@ -108,7 +108,7 @@ export default function ResultsSection() {
             style={{ color: "#FFFFFF" }}
           >
             Impact{" "}
-            <span className="relative inline-block" style={{ color: "#D4A017" }}>
+            <span className="relative inline-block" style={{ color: "#8C5369" }}>
               Beyond
             </span>{" "}
             Tasks
@@ -122,7 +122,7 @@ export default function ResultsSection() {
               key={result.title}
               className="group relative flex flex-col rounded-xl overflow-hidden"
               style={{
-                backgroundColor: "#163B6D",
+                backgroundColor: "#5E2840",
                 boxShadow:
                   "0 2px 8px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.15)",
                 animation: `resultsFadeUp 0.65s ease-out ${0.15 + i * 0.12}s both`,
@@ -141,10 +141,10 @@ export default function ResultsSection() {
                   "0 2px 8px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.15)";
               }}
             >
-              {/* Gold top accent bar */}
+              {/* Mauve top accent bar */}
               <div
                 className="h-1 w-full flex-shrink-0"
-                style={{ backgroundColor: "#D4A017" }}
+                style={{ backgroundColor: "#8C5369" }}
               />
 
               <div className="flex flex-col gap-5 p-6 flex-1">
@@ -152,7 +152,7 @@ export default function ResultsSection() {
                 <div className="flex items-start gap-3">
                   <span
                     className="text-xs font-bold tabular-nums mt-0.5 flex-shrink-0"
-                    style={{ color: "rgba(212,160,23,0.55)" }}
+                    style={{ color: "rgba(140,83,105,0.55)" }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -176,7 +176,7 @@ export default function ResultsSection() {
                   <div className="flex flex-col gap-1">
                     <span
                       className="text-[10px] font-bold uppercase tracking-[0.18em]"
-                      style={{ color: "#D4A017" }}
+                      style={{ color: "#8C5369" }}
                     >
                       Challenge
                     </span>
@@ -192,7 +192,7 @@ export default function ResultsSection() {
                   <div className="flex flex-col gap-1">
                     <span
                       className="text-[10px] font-bold uppercase tracking-[0.18em]"
-                      style={{ color: "#D4A017" }}
+                      style={{ color: "#8C5369" }}
                     >
                       Solution
                     </span>
@@ -207,11 +207,11 @@ export default function ResultsSection() {
                   {/* Outcome */}
                   <div
                     className="flex flex-col gap-1 mt-auto pt-4"
-                    style={{ borderTop: "1px solid rgba(212,160,23,0.2)" }}
+                    style={{ borderTop: "1px solid rgba(140,83,105,0.2)" }}
                   >
                     <span
                       className="text-[10px] font-bold uppercase tracking-[0.18em]"
-                      style={{ color: "#D4A017" }}
+                      style={{ color: "#8C5369" }}
                     >
                       Outcome
                     </span>
