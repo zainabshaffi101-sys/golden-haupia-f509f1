@@ -62,7 +62,7 @@ export default function HeroSection() {
         .h-fade-3 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.35s; opacity: 0; }
         .h-fade-4 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.5s; opacity: 0; }
         .h-fade-5 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.65s; opacity: 0; }
-        .h-img    { animation: fadeRight 1s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.25s; opacity: 0; }
+        .h-img    { animation: fadeRight 1s cubic-bezier(0.22,1,0.36,1) 0.25s forwards, floatSlow 7s ease-in-out 1.25s infinite; opacity: 0; }
         .h-float  { animation: floatSlow 7s ease-in-out infinite; }
         .h-breathe { animation: breathe 4s ease-in-out infinite; }
         .h-scroll-bounce { animation: scrollBounce 2s ease-in-out infinite; }
@@ -286,7 +286,7 @@ export default function HeroSection() {
           />
 
           <div
-            className="h-img h-float photo-frame relative z-10 w-48 sm:w-56 lg:w-[220px] xl:w-[240px]"
+            className="h-img photo-frame relative z-10 w-48 sm:w-56 lg:w-[220px] xl:w-[240px]"
             style={{
               transform: `perspective(800px) rotateY(${mousePos.x * -4}deg) rotateX(${mousePos.y * 2}deg)`,
               transition: "transform 0.15s ease-out",
