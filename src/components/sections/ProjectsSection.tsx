@@ -6,450 +6,318 @@ const projects = [
     tab: "Calendar & Time Blocking",
     tool: "Google Calendar",
     title: "Calendar Auditing & Time Blocking: Maximizing Executive Deep Work",
-    problem: "The executive's calendar was a reactive mess of back-to-back meetings, overlapping commitments, and zero dedicated focus time. Context-switching was constant, deep work was impossible, and important priorities kept getting pushed.",
-    built: "I performed a full calendar audit, eliminated redundant recurring meetings, introduced color-coded time blocking by work type (deep work, admin, communication, personal), and built a weekly template that protected focus hours while still accommodating team collaboration.",
-    approach: "Started with a 2-week audit of existing calendar patterns, interviewed the executive about energy levels and peak focus times, then designed a sustainable weekly rhythm around those insights. Implemented buffer time between meetings and created a priority matrix for scheduling decisions.",
-    results: "Recovered 12+ hours of deep work time weekly. Reduced back-to-back meetings by 70%. Executive reported significantly lower end-of-day mental fatigue within 2 weeks.",
-    images: ["/work-calendar.jpg"],
+    problem:
+      "The executive's calendar was a reactive mess of back-to-back meetings with no buffer time, overlapping commitments, and zero protected focus blocks. Context-switching was costing 5+ hours per week in lost productivity.",
+    built:
+      "A structured calendar system using Google Calendar with colour-coded categories, recurring time blocks for deep work, automated buffer zones between meetings, and a weekly review template.",
+    approach:
+      "Audited 3 months of calendar history to identify patterns. Introduced time-blocking methodology, created a priority matrix for meeting types, and set up delegation rules for recurring requests.",
+    result:
+      "Reclaimed 5+ hours of deep work per week. Meeting acceptance rate dropped by 40%. Executive reported feeling 'in control of the day' within 2 weeks.",
+    images: ["/work-calendar.png"],
     testimonial: {
+      text: "I highly recommend Zainab to anyone looking for a reliable and proactive Virtual Assistant. She has an incredible ability to bring order to busy schedules and complex workflows.",
       client: "Client 01",
-      role: "Executive Leader · Corporate Services",
-      quote: "Zainab transformed my calendar from a source of stress into a tool that actually works for me. I finally have time to think.",
+      role: "Operations Manager · Digital Marketing Agency",
     },
   },
   {
     id: "02",
     tab: "Notion Workspace",
     tool: "Notion",
-    title: "Operational Hub: Building a Notion Workspace from Scratch",
-    problem: "The team was scattered across emails, spreadsheets, WhatsApp, and sticky notes. There was no single source of truth for tasks, client information, or project status. Things were falling through the cracks weekly.",
-    built: "Designed and built a fully custom Notion workspace including a project tracker, client CRM, content calendar, team wiki, and meeting notes database — all interconnected with linked databases and filtered views for each team member.",
-    approach: "Mapped all existing workflows before touching Notion. Ran a discovery session to understand how each team member actually works. Built in phases: core structure first, then templates, then automation triggers. Trained the team with video walkthroughs.",
-    results: "100% team adoption within 3 weeks. Eliminated 5+ redundant communication threads per day. Project visibility improved — nothing missed in the first month post-launch.",
-    images: ["/work-notion.jpg"],
+    title: "Operational Hub: Building a Central Notion Workspace",
+    problem:
+      "The team was working across 6 different tools with no single source of truth. Projects were tracked in spreadsheets, communications in email threads, and SOPs lived in people's heads.",
+    built:
+      "A unified Notion workspace with a master project tracker, team wiki, SOPs library, content calendar, and client CRM — all interconnected with relational databases.",
+    approach:
+      "Ran a systems audit interview with each team member. Mapped existing workflows before digitising them. Built in phases: core structure first, then automations, then team onboarding.",
+    result:
+      "Onboarding time for new team members reduced from 2 weeks to 3 days. Project visibility increased across the team. Weekly status meetings cut from 60 mins to 20 mins.",
+    images: ["/work-notion.png", "/work-notion-2.png"],
     testimonial: {
-      client: "Client 03",
-      role: "Operations Director · Tech Startup",
-      quote: "We went from organized chaos to actual clarity. The Notion system Zainab built is something the whole team relies on every single day.",
+      text: "Zainab is the kind of person every founder hopes to have in their corner. She is organized, dependable, and always willing to go the extra mile.",
+      client: "Client 02",
+      role: "Founder · Online Coaching Business",
     },
   },
   {
     id: "03",
-    tab: "Client Onboarding",
+    tab: "Client Onboarding Tracker",
     tool: "Airtable",
-    title: "Client Onboarding Tracker Built on Airtable",
-    problem: "New client onboarding was inconsistent — some clients got everything, others missed key steps. There was no checklist, no accountability, and the team had to rely on memory and scattered emails to track progress.",
-    built: "Built an Airtable-based client onboarding tracker with stage-by-stage pipelines, automated status updates, checklist templates per client type, and a client-facing intake form that auto-populated the database.",
-    approach: "Documented the ideal onboarding journey from first contact to fully onboarded. Identified the 3 most common failure points. Built the Airtable base to solve each one with structure, not manual effort. Linked intake form responses to client records automatically.",
-    results: "Onboarding time reduced by 40%. Zero missed steps in 60+ client onboardings post-launch. Team confidence in the process went from 4/10 to 9/10.",
-    images: ["/work-airtable.jpg"],
+    title: "Client Onboarding Tracker: From Chaos to Clarity",
+    problem:
+      "New clients were falling through the cracks. No standardised onboarding process meant different team members handled new clients differently, creating inconsistent experiences and missed steps.",
+    built:
+      "An Airtable-based client onboarding system with automated status tracking, task assignments by role, email templates triggered at each stage, and a client-facing progress portal.",
+    approach:
+      "Mapped the ideal onboarding journey end-to-end. Built the database structure, then layered in Airtable automations for notifications and status changes. Trained the team with a recorded walkthrough.",
+    result:
+      "Client onboarding time reduced by 60%. Zero missed onboarding steps in 3 months post-launch. Client satisfaction scores increased noticeably in follow-up surveys.",
+    images: ["/work-airtable.png"],
     testimonial: {
-      client: "Client 04",
-      role: "Agency Founder · Creative Services",
-      quote: "Our onboarding used to feel embarrassing. Now it's one of the first things new clients compliment us on.",
+      text: "I've had the pleasure of working with Zainab and can confidently say she is one of the most dependable professionals I've met. She communicates clearly and consistently delivers quality work.",
+      client: "Client 03",
+      role: "Project Coordinator · Creative Agency",
     },
   },
   {
     id: "04",
-    tab: "Gantt Chart",
+    tab: "Gantt Chart Infrastructure",
     tool: "Google Sheets",
-    title: "Gantt Chart Infrastructure for Multi-Phase Projects",
-    problem: "A multi-phase project with 6 workstreams had no visual timeline. Stakeholders had no idea where things stood, dependencies were invisible, and the project manager was fielding status-update requests all day.",
-    built: "Built a dynamic Gantt chart in Google Sheets with conditional formatting, dependency mapping, milestone tracking, and a weekly summary tab that auto-generated a progress snapshot for stakeholder updates.",
-    approach: "Started with a stakeholder interview to understand what information they actually needed (not just what they asked for). Mapped all tasks and dependencies first on paper, then built the Sheets infrastructure to reflect them. Added a RAG (Red/Amber/Green) status system for instant visual scanning.",
-    results: "Stakeholder update requests dropped by 80% — the chart answered their questions before they asked. Project delivered on time across all 6 workstreams.",
-    images: ["/work-gantt.jpg"],
+    title: "Gantt Chart Infrastructure: Project Visibility at Scale",
+    problem:
+      "A multi-workstream project had no unified timeline. Dependencies were unclear, deadlines were being missed, and leadership had no real-time view of progress without chasing individual team leads.",
+    built:
+      "A dynamic Google Sheets Gantt chart with conditional formatting, dependency mapping, progress tracking, and a dashboard summary view for leadership reporting.",
+    approach:
+      "Gathered project scope and timelines from all team leads. Built the Gantt structure with automated colour changes based on status. Created a weekly update protocol so the sheet stayed current.",
+    result:
+      "First time the full project team had visibility into cross-team dependencies. Two critical blockers identified within the first week. Project delivered on time — first in 18 months.",
+    images: [],
     testimonial: {
-      client: "Client 05",
-      role: "Project Sponsor · Infrastructure Firm",
-      quote: "For the first time on a project this size, I could see everything at a glance. That alone saved hours every week.",
+      text: "Working with Zainab has been an absolute pleasure. Her ability to stay organized, anticipate needs, and handle responsibilities with minimal supervision significantly improved our operations.",
+      client: "Client 04",
+      role: "Financial Manager · Energy Services",
     },
   },
   {
     id: "05",
     tab: "Inbox Management",
     tool: "Gmail",
-    title: "Inbox Zero System: Managing a High-Volume Executive Inbox",
-    problem: "An executive inbox with 3,000+ unread emails, no labeling system, and no triage process. Critical emails were being missed. The executive was spending 2–3 hours daily in email and still felt behind.",
-    built: "Implemented a full Gmail organization system: custom labels, filters, automated sorting rules, priority flags, canned responses for common requests, and a daily triage protocol. Cleared the backlog and maintained inbox zero for 30+ consecutive days.",
-    approach: "Started with a 2-hour inbox audit to categorize existing email types. Built the filter and label architecture to match real usage patterns. Created a morning and end-of-day triage routine. Drafted 12 canned response templates for the most frequent email types.",
-    results: "Email time reduced from 2–3 hours to 30–40 minutes daily. Zero missed critical emails in the 30 days post-implementation. Executive described it as 'life-changing'.",
-    images: ["/work-inbox-1.jpg", "/work-inbox-2.jpg", "/work-inbox-3.jpg"],
+    title: "Inbox Management: From 2,000 Unread to Zero",
+    problem:
+      "An executive's Gmail inbox had over 2,000 unread emails. Important client messages were buried, response times were averaging 3–5 days, and the executive was spending 3 hours daily just triaging email.",
+    built:
+      "A full Gmail system overhaul: custom label taxonomy, filters for auto-sorting, priority inbox rules, canned responses for common queries, and a daily 15-minute email protocol.",
+    approach:
+      "Archived and categorised all existing emails over a focused weekend sprint. Built the filtering and label system. Created a response SOP and handed over with a training session.",
+    result:
+      "Inbox at zero within 72 hours. Daily email time reduced from 3 hours to 30 minutes. Response time to priority emails dropped to under 4 hours.",
+    images: ["/work-inbox-1.jpg", "/work-inbox-2.jpg"],
     testimonial: {
-      client: "Client 02",
-      role: "Tech Entrepreneur · E-commerce",
-      quote: "I didn't know my inbox could look like this. Zainab turned my biggest daily stressor into something that just... works.",
+      text: "Zainab is someone I recommend without hesitation. She is thoughtful, resourceful, and highly organized — and brings a level of dedication that makes working with her both productive and enjoyable.",
+      client: "Client 05",
+      role: "Tech Founder · B2B SaaS",
     },
   },
   {
     id: "06",
     tab: "Data Analysis",
     tool: "Google Sheets",
-    title: "Local Infrastructure Data Analysis & Reporting",
-    problem: "A regional team had months of raw infrastructure data sitting in disconnected spreadsheets with no analysis, no visualization, and no way to present findings to leadership in a meaningful way.",
-    built: "Cleaned and consolidated 6 months of raw data into a single master sheet, built pivot tables and bar charts showing regional performance trends, and created a clean executive summary dashboard and slide-ready visuals.",
-    approach: "Started by auditing all existing data sources for consistency and gaps. Standardized naming conventions and date formats across all files. Built the analysis layer with formulas and pivot tables first, then designed visualizations that answered the leadership team's actual questions.",
-    results: "First clean data report delivered within 5 days. Leadership made 3 resource allocation decisions in the first week using the new dashboard. Regional director requested monthly recurring analysis.",
-    images: ["/work-data.jpg"],
+    title: "Local Infrastructure Data Analysis: Turning Data Into Decisions",
+    problem:
+      "A regional team had months of infrastructure survey data sitting in disconnected spreadsheets. No one had the capacity to analyse it, and decisions were being made on gut feel rather than evidence.",
+    built:
+      "A consolidated Google Sheets analysis workbook with pivot tables, data visualisation charts, a summary dashboard, and a written insights report for stakeholder presentation.",
+    approach:
+      "Cleaned and merged the raw datasets. Applied pivot table analysis to surface patterns. Built charts for each key metric and wrote an executive summary with 5 actionable recommendations.",
+    result:
+      "Data that had sat untouched for 4 months was transformed into a decision-ready report in 6 days. Two recommendations were actioned within the following quarter.",
+    images: ["/work-data.JPG"],
     testimonial: {
-      client: "Client 06",
-      role: "Regional Director · Public Infrastructure",
-      quote: "Zainab took a mountain of raw data and turned it into something we could actually use to make decisions. Invaluable.",
+      text: "Working with Zainab has been an absolute pleasure. She brings a rare combination of professionalism, efficiency, and genuine care to her work.",
+      client: "Client 04",
+      role: "Financial Manager · Energy Services",
     },
   },
 ];
 
-function useInView(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect(); } }, { threshold });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return { ref, inView };
-}
-
 export default function ProjectsSection() {
-  const { ref, inView } = useInView();
-  const [active, setActive] = useState(0);
-  const [animating, setAnimating] = useState(false);
-  const [imgIndex, setImgIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  const switchTab = (i: number) => {
-    if (i === active || animating) return;
-    setAnimating(true);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleTabChange = (index: number) => {
+    if (index === activeTab) return;
+    setIsAnimating(true);
     setTimeout(() => {
-      setActive(i);
-      setImgIndex(0);
-      setAnimating(false);
+      setActiveTab(index);
+      setIsAnimating(false);
     }, 200);
   };
 
-  const project = projects[active];
+  const project = projects[activeTab];
 
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap');
-
-        @keyframes revealUp {
-          from { opacity: 0; transform: translateY(32px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes contentIn {
-          from { opacity: 0; transform: translateY(16px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .proj-reveal { opacity: 0; }
-        .proj-reveal.in { animation: revealUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
-
-        .proj-content-in { animation: contentIn 0.35s cubic-bezier(0.22,1,0.36,1) forwards; }
-        .proj-content-out { opacity: 0; transition: opacity 0.2s ease; }
-
-        .tab-btn {
-          transition: all 0.22s cubic-bezier(0.22,1,0.36,1);
-          white-space: nowrap;
-          cursor: pointer;
-        }
-        .tab-btn:hover {
-          background-color: rgba(237,232,220,0.8) !important;
-          color: #6B2737 !important;
-        }
-
-        .img-thumb {
-          transition: all 0.2s ease;
-          cursor: pointer;
-        }
-        .img-thumb:hover { opacity: 1 !important; transform: scale(1.05); }
-
-        .section-block {
-          transition: all 0.25s ease;
-        }
-        .section-block:hover {
-          border-color: rgba(107,39,55,0.2) !important;
-        }
-
-        .proj-tabs::-webkit-scrollbar { display: none; }
-        .proj-tabs { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
-
-      <section
-        id="projects"
-        className="py-28 lg:py-36"
-        style={{ backgroundColor: "#EDE8DC" }}
-      >
-        <div className="max-w-6xl mx-auto px-6 lg:px-8" ref={ref}>
-
-          {/* Header */}
-          <div className={`proj-reveal ${inView ? "in" : ""} mb-12`} style={{ animationDelay: "0.05s" }}>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-[1.5px] w-8" style={{ backgroundColor: "#C9A0A0" }} />
-              <p className="text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}>
-                Featured Work
-              </p>
-            </div>
-            <h2
-              className="leading-[1.15]"
-              style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-                color: "#2C1A1F",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Real Work,{" "}
-              <span style={{ color: "#6B2737", fontStyle: "italic" }}>Real Results</span>
-            </h2>
-          </div>
-
-          {/* Tab bar */}
-          <div
-            className={`proj-reveal ${inView ? "in" : ""} proj-tabs flex gap-2 overflow-x-auto pb-2 mb-8`}
-            style={{ animationDelay: "0.15s" }}
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-24 lg:py-32 px-6"
+      style={{ backgroundColor: "#FAF8F5" }}
+    >
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div
+          className={`mb-14 text-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
+          <p
+            className="text-xs font-semibold tracking-[0.2em] uppercase mb-3"
+            style={{ color: "#8C5369" }}
           >
-            {projects.map((p, i) => (
-              <button
-                key={p.id}
-                onClick={() => switchTab(i)}
-                className="tab-btn flex-shrink-0 px-5 py-2.5 rounded-xl text-sm font-semibold"
-                style={{
-                  backgroundColor: active === i ? "#6B2737" : "#FFFFFF",
-                  color: active === i ? "#FAF8F5" : "#2B2527",
-                  border: `1px solid ${active === i ? "#6B2737" : "rgba(201,160,160,0.3)"}`,
-                  fontFamily: "'Inter', sans-serif",
-                  boxShadow: active === i ? "0 4px 16px rgba(107,39,55,0.25)" : "none",
-                }}
-              >
-                {p.tab}
-              </button>
-            ))}
-          </div>
-
-          {/* Project content */}
-          <div
-            className={`proj-reveal ${inView ? "in" : ""} rounded-3xl overflow-hidden`}
+            Portfolio
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold leading-tight"
             style={{
-              animationDelay: "0.22s",
-              backgroundColor: "#FFFFFF",
-              boxShadow: "0 4px 40px rgba(107,39,55,0.08), 0 1px 4px rgba(107,39,55,0.04)",
-              border: "1px solid rgba(201,160,160,0.2)",
+              color: "#4A1E2F",
+              fontFamily: "'Playfair Display', Georgia, serif",
+              letterSpacing: "-0.02em",
             }}
           >
-            <div className={animating ? "proj-content-out" : "proj-content-in"}>
+            Featured Work
+          </h2>
+          <div className="mt-5 flex items-center justify-center gap-3">
+            <div className="h-px w-16" style={{ backgroundColor: "#8C5369", opacity: 0.4 }} />
+            <div className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#8C5369" }} />
+            <div className="h-px w-16" style={{ backgroundColor: "#8C5369", opacity: 0.4 }} />
+          </div>
+        </div>
 
-              {/* Top bar */}
-              <div
-                className="flex items-center justify-between px-8 py-5"
-                style={{ borderBottom: "1px solid rgba(201,160,160,0.2)", backgroundColor: "rgba(250,248,245,0.7)" }}
+        {/* Tabs */}
+        <div
+          className={`flex flex-wrap gap-2 mb-10 justify-center transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
+          {projects.map((p, i) => (
+            <button
+              key={p.id}
+              onClick={() => handleTabChange(i)}
+              className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+              style={{
+                backgroundColor: activeTab === i ? "#4A1E2F" : "#EDE8DC",
+                color: activeTab === i ? "#FAF8F5" : "#4A1E2F",
+                border: activeTab === i ? "2px solid #4A1E2F" : "2px solid transparent",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              {p.tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Content panel */}
+        <div
+          className={`bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300 ${isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}
+          style={{ border: "1px solid rgba(140,83,105,0.15)" }}
+        >
+          {/* Top bar */}
+          <div className="h-1 w-full" style={{ backgroundColor: "#8C5369" }} />
+
+          <div className="p-8 lg:p-12">
+            {/* Tool badge + title */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span
+                className="text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full"
+                style={{ backgroundColor: "#F9F0F0", color: "#8C5369" }}
               >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="text-xs font-bold uppercase tracking-[0.2em]"
-                    style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}
-                  >
-                    Project {project.id}
-                  </span>
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-semibold"
-                    style={{ backgroundColor: "rgba(107,39,55,0.08)", color: "#6B2737", fontFamily: "'Inter', sans-serif" }}
-                  >
-                    {project.tool}
-                  </span>
-                </div>
-                <div className="flex gap-1.5">
-                  {["#F5C6C6", "#F5E6C6", "#C6F5D0"].map((c, i) => (
-                    <div key={i} className="w-3 h-3 rounded-full" style={{ backgroundColor: c }} />
-                  ))}
-                </div>
-              </div>
+                {project.tool}
+              </span>
+              <span className="text-xs text-gray-400">Project {project.id}</span>
+            </div>
 
-              <div className="p-8 sm:p-10">
-                {/* Title */}
-                <h3
-                  className="mb-10 leading-snug"
-                  style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: "clamp(1.2rem, 2.2vw, 1.7rem)",
-                    color: "#2C1A1F",
-                    letterSpacing: "-0.01em",
-                  }}
+            <h3
+              className="text-2xl lg:text-3xl font-bold mb-10 leading-tight"
+              style={{
+                color: "#4A1E2F",
+                fontFamily: "'Playfair Display', Georgia, serif",
+              }}
+            >
+              {project.title}
+            </h3>
+
+            {/* Detail grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+              {[
+                { label: "🔴 The Problem", text: project.problem },
+                { label: "🔧 What I Built", text: project.built },
+                { label: "📋 My Approach", text: project.approach },
+                { label: "✅ The Result", text: project.result },
+              ].map(({ label, text }) => (
+                <div key={label}>
+                  <p
+                    className="text-xs font-semibold tracking-widest uppercase mb-2"
+                    style={{ color: "#8C5369" }}
+                  >
+                    {label}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#2B2527" }}>
+                    {text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Images — dynamic layout */}
+            {project.images.length > 0 && (
+              <div className="mb-10">
+                <p
+                  className="text-xs font-semibold tracking-widest uppercase mb-4"
+                  style={{ color: "#8C5369" }}
                 >
-                  {project.title}
-                </h3>
-
-                {/* 2-col grid: left = content blocks, right = image + testimonial */}
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 lg:gap-12">
-
-                  {/* LEFT: Content blocks */}
-                  <div className="space-y-6">
-
-                    {/* Problem */}
+                  📎 Work Sample
+                </p>
+                <div
+                  className={`grid gap-4 ${project.images.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}
+                >
+                  {project.images.map((src, i) => (
                     <div
-                      className="section-block rounded-2xl p-6"
-                      style={{ backgroundColor: "rgba(250,248,245,0.8)", border: "1px solid rgba(201,160,160,0.18)" }}
-                    >
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <span className="text-base">🔴</span>
-                        <h4 className="text-sm font-bold uppercase tracking-[0.15em]" style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}>
-                          The Problem
-                        </h4>
-                      </div>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(44,26,31,0.72)", fontFamily: "'Inter', sans-serif", lineHeight: "1.8" }}>
-                        {project.problem}
-                      </p>
-                    </div>
-
-                    {/* What I built */}
-                    <div
-                      className="section-block rounded-2xl p-6"
-                      style={{ backgroundColor: "rgba(250,248,245,0.8)", border: "1px solid rgba(201,160,160,0.18)" }}
-                    >
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <span className="text-base">🛠</span>
-                        <h4 className="text-sm font-bold uppercase tracking-[0.15em]" style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}>
-                          What I Built
-                        </h4>
-                      </div>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(44,26,31,0.72)", fontFamily: "'Inter', sans-serif", lineHeight: "1.8" }}>
-                        {project.built}
-                      </p>
-                    </div>
-
-                    {/* Approach */}
-                    <div
-                      className="section-block rounded-2xl p-6"
-                      style={{ backgroundColor: "rgba(250,248,245,0.8)", border: "1px solid rgba(201,160,160,0.18)" }}
-                    >
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <span className="text-base">🧭</span>
-                        <h4 className="text-sm font-bold uppercase tracking-[0.15em]" style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}>
-                          My Approach
-                        </h4>
-                      </div>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(44,26,31,0.72)", fontFamily: "'Inter', sans-serif", lineHeight: "1.8" }}>
-                        {project.approach}
-                      </p>
-                    </div>
-
-                    {/* Results */}
-                    <div
-                      className="section-block rounded-2xl p-6"
-                      style={{ backgroundColor: "rgba(107,39,55,0.05)", border: "1px solid rgba(107,39,55,0.15)" }}
-                    >
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <span className="text-base">✅</span>
-                        <h4 className="text-sm font-bold uppercase tracking-[0.15em]" style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}>
-                          Results
-                        </h4>
-                      </div>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(44,26,31,0.72)", fontFamily: "'Inter', sans-serif", lineHeight: "1.8" }}>
-                        {project.results}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* RIGHT: Image + testimonial */}
-                  <div className="flex flex-col gap-5">
-
-                    {/* Main image */}
-                    <div
-                      className="rounded-2xl overflow-hidden"
-                      style={{ aspectRatio: "4/3", backgroundColor: "#EDE8DC" }}
+                      key={i}
+                      className="rounded-xl overflow-hidden bg-gray-100"
+                      style={{ border: "1px solid rgba(140,83,105,0.15)" }}
                     >
                       <img
-                        src={project.images[imgIndex]}
-                        alt={`Work sample for ${project.tab}`}
-                        className="w-full h-full object-cover"
+                        src={src}
+                        alt={`${project.tab} sample ${i + 1}`}
+                        className="w-full h-64 object-cover object-top"
                         onError={(e) => {
-                          const el = e.currentTarget as HTMLImageElement;
-                          el.style.display = "none";
-                          const parent = el.parentElement;
-                          if (parent) {
-                            parent.style.display = "flex";
-                            parent.style.alignItems = "center";
-                            parent.style.justifyContent = "center";
-                            parent.innerHTML = `<span style="color:rgba(107,39,55,0.3);font-size:2rem;">📎</span>`;
-                          }
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
                         }}
                       />
                     </div>
-
-                    {/* Thumbnail strip if multiple images */}
-                    {project.images.length > 1 && (
-                      <div className="flex gap-2">
-                        {project.images.map((img, i) => (
-                          <button
-                            key={i}
-                            onClick={() => setImgIndex(i)}
-                            className="img-thumb flex-1 rounded-xl overflow-hidden"
-                            style={{
-                              aspectRatio: "1",
-                              opacity: imgIndex === i ? 1 : 0.45,
-                              border: imgIndex === i ? "2px solid #6B2737" : "2px solid transparent",
-                            }}
-                          >
-                            <img src={img} alt="" className="w-full h-full object-cover" />
-                          </button>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Client testimonial */}
-                    <div
-                      className="rounded-2xl p-5"
-                      style={{ backgroundColor: "#EDE8DC", border: "1px solid rgba(201,160,160,0.3)" }}
-                    >
-                      <p
-                        className="text-sm leading-relaxed mb-4"
-                        style={{
-                          fontFamily: "'Playfair Display', serif",
-                          color: "#2C1A1F",
-                          fontStyle: "italic",
-                          lineHeight: "1.75",
-                        }}
-                      >
-                        "{project.testimonial.quote}"
-                      </p>
-                      <div className="flex items-center gap-2.5">
-                        <div
-                          className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                          style={{ backgroundColor: "rgba(107,39,55,0.12)", color: "#6B2737", fontFamily: "'Playfair Display', serif" }}
-                        >
-                          {project.testimonial.client.split(" ")[1]}
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold" style={{ color: "#2C1A1F", fontFamily: "'Inter', sans-serif" }}>
-                            {project.testimonial.client}
-                          </p>
-                          <p className="text-[10px] mt-0.5" style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}>
-                            {project.testimonial.role}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <a
-                      href="https://calendar.app.google/MQziGAszQY8wVMqp9"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
-                      style={{ backgroundColor: "#6B2737", color: "#FAF8F5", fontFamily: "'Inter', sans-serif" }}
-                    >
-                      Want results like this?
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </a>
-                  </div>
+                  ))}
                 </div>
+              </div>
+            )}
+
+            {/* Testimonial */}
+            <div
+              className="rounded-xl p-6"
+              style={{ backgroundColor: "#F9F0F0", border: "1px solid rgba(140,83,105,0.15)" }}
+            >
+              <p
+                className="text-xs font-semibold tracking-widest uppercase mb-3"
+                style={{ color: "#8C5369" }}
+              >
+                💬 Client Testimonial
+              </p>
+              <blockquote
+                className="text-sm leading-relaxed italic mb-4"
+                style={{ color: "#2B2527" }}
+              >
+                "{project.testimonial.text}"
+              </blockquote>
+              <div>
+                <p className="text-sm font-semibold" style={{ color: "#4A1E2F" }}>
+                  {project.testimonial.client}
+                </p>
+                <p className="text-xs" style={{ color: "#8C5369" }}>
+                  {project.testimonial.role}
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
