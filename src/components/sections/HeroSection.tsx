@@ -215,7 +215,7 @@ export default function HeroSection() {
 
           <div className="h-fade-4 flex flex-col sm:flex-row gap-3.5 mb-14">
             <a
-              href="https://calendar.app.google/MQziGAszQY8wVMqp9"
+              href="https://calendar.app.google/Z4oYFSa7hLMTdQdS6"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-semibold text-sm"
