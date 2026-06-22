@@ -12,7 +12,6 @@ export default function HeroSection() {
   const [hovered, setHovered] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Parallax mouse tracking
   useEffect(() => {
     const handleMouse = (e: MouseEvent) => {
       if (!sectionRef.current) return;
@@ -52,21 +51,6 @@ export default function HeroSection() {
         @keyframes breathe {
           0%, 100% { transform: scale(1); opacity: 0.6; }
           50%       { transform: scale(1.08); opacity: 0.9; }
-        }
-        @keyframes slideInBadge {
-          from { opacity: 0; transform: translateX(-16px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes countUp {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes borderTrace {
-          0%   { clip-path: inset(0 100% 100% 0); }
-          25%  { clip-path: inset(0 0 100% 0); }
-          50%  { clip-path: inset(0 0 0 0); }
-          75%  { clip-path: inset(100% 0 0 0); }
-          100% { clip-path: inset(0 100% 100% 0); }
         }
         @keyframes scrollBounce {
           0%, 100% { transform: translateY(0); opacity: 0.6; }
@@ -134,10 +118,6 @@ export default function HeroSection() {
           box-shadow: 0 12px 32px rgba(107,39,55,0.15);
         }
 
-        .photo-frame {
-          transition: transform 0.1s ease-out;
-        }
-
         .badge-dot {
           animation: breathe 2s ease-in-out infinite;
         }
@@ -148,7 +128,7 @@ export default function HeroSection() {
         className="relative min-h-screen flex flex-col lg:flex-row overflow-hidden"
         style={{ backgroundColor: "#FAF8F5" }}
       >
-        {/* ── Ambient background orbs (parallax) ── */}
+        {/* Ambient background orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div
             className="absolute -top-32 -left-32 w-[560px] h-[560px] rounded-full"
@@ -176,10 +156,9 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* ── LEFT: Text Content ── */}
+        {/* LEFT: Text Content */}
         <div className="relative flex flex-col justify-center px-8 py-24 lg:px-16 xl:px-24 lg:w-[55%] z-10">
 
-          {/* Eyebrow badge */}
           <div className="h-fade-1 inline-flex items-center gap-2 mb-8 w-fit">
             <div
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-[0.15em]"
@@ -194,7 +173,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Main headline */}
           <h1
             className="h-fade-2 mb-5 leading-[1.1] tracking-tight"
             style={{
@@ -213,14 +191,12 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          {/* Elegant rule */}
           <div className="h-fade-3 flex items-center gap-3 mb-7">
             <div className="h-[1.5px] w-12 flex-shrink-0" style={{ backgroundColor: "#C9A0A0" }} />
             <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#C9A0A0" }} />
             <div className="h-[1px] w-16" style={{ backgroundColor: "rgba(201,160,160,0.35)" }} />
           </div>
 
-          {/* Subheadline */}
           <p
             className="h-fade-3 text-base sm:text-lg mb-10 max-w-[520px]"
             style={{
@@ -237,7 +213,6 @@ export default function HeroSection() {
             through structured workflows and reliable executive support.
           </p>
 
-          {/* CTA Buttons */}
           <div className="h-fade-4 flex flex-col sm:flex-row gap-3.5 mb-14">
             <a
               href="https://calendar.app.google/MQziGAszQY8wVMqp9"
@@ -266,7 +241,6 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Stats row */}
           <div className="h-fade-5 grid grid-cols-3 gap-3 max-w-[420px]">
             {stats.map((stat, i) => (
               <div
@@ -295,7 +269,6 @@ export default function HeroSection() {
             ))}
           </div>
 
-          {/* Scroll hint */}
           <div className="h-fade-5 flex items-center gap-2 mt-12 opacity-40">
             <ArrowDown className="w-3.5 h-3.5 h-scroll-bounce" style={{ color: "#6B2737" }} />
             <span className="text-[11px] uppercase tracking-[0.15em]" style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}>
@@ -304,24 +277,21 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ── RIGHT: Photo ── */}
-        <div className="relative flex items-center justify-center lg:w-[45%] min-h-[520px] lg:min-h-0 py-16 lg:py-0 z-10">
+        {/* RIGHT: Photo */}
+        <div className="relative flex items-center justify-center lg:w-[45%] min-h-[400px] lg:min-h-0 py-10 lg:py-0 z-10">
 
-          {/* Soft sand background blob */}
           <div
             className="absolute inset-8 rounded-[40px] h-breathe"
             style={{ background: "linear-gradient(145deg, #EDE8DC 0%, rgba(201,160,160,0.35) 100%)" }}
           />
 
-          {/* Photo frame */}
           <div
-            className="h-img h-float photo-frame relative z-10 w-64 sm:w-72 lg:w-[290px] xl:w-[320px]"
+            className="h-img h-float photo-frame relative z-10 w-48 sm:w-56 lg:w-[220px] xl:w-[240px]"
             style={{
               transform: `perspective(800px) rotateY(${mousePos.x * -4}deg) rotateX(${mousePos.y * 2}deg)`,
               transition: "transform 0.15s ease-out",
             }}
           >
-            {/* Decorative corner brackets */}
             <div
               className="absolute -top-4 -left-4 w-10 h-10"
               style={{ borderTop: "2px solid #6B2737", borderLeft: "2px solid #6B2737", borderRadius: "4px 0 0 0" }}
@@ -330,13 +300,11 @@ export default function HeroSection() {
               className="absolute -bottom-4 -right-4 w-10 h-10"
               style={{ borderBottom: "2px solid #6B2737", borderRight: "2px solid #6B2737", borderRadius: "0 0 4px 0" }}
             />
-            {/* Ghost offset frame */}
             <div
               className="absolute -top-6 -left-6 w-full h-full rounded-3xl"
               style={{ border: "1px solid rgba(201,160,160,0.35)" }}
             />
 
-            {/* Image container */}
             <div
               className="relative overflow-hidden rounded-3xl"
               style={{ boxShadow: "0 32px 80px rgba(107,39,55,0.22), 0 8px 24px rgba(107,39,55,0.1)" }}
@@ -344,7 +312,7 @@ export default function HeroSection() {
               <img
                 src="/headshot-1.png"
                 alt="Zainab Shaffi — Operations & Executive Support Specialist"
-                className="w-full"
+                className="w-full h-auto block object-cover object-top"
                 style={{ aspectRatio: "3/4" }}
               />
               <div
@@ -353,7 +321,6 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Floating name card */}
             <div
               className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-2xl text-center whitespace-nowrap"
               style={{ backgroundColor: "#6B2737", boxShadow: "0 10px 32px rgba(107,39,55,0.32)" }}
@@ -372,7 +339,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Floating stat badge */}
             <div
               className="absolute -top-5 -right-5 px-3.5 py-2.5 rounded-2xl text-center"
               style={{
@@ -395,7 +361,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Second floating chip */}
             <div
               className="absolute -left-8 top-1/3 px-3 py-2 rounded-xl"
               style={{
