@@ -62,7 +62,7 @@ export default function HeroSection() {
         .h-fade-3 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.35s; opacity: 0; }
         .h-fade-4 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.5s; opacity: 0; }
         .h-fade-5 { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.65s; opacity: 0; }
-        .h-img    { animation: fadeRight 1s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay: 0.25s; opacity: 0; }
+        .h-img    { animation: fadeRight 1s cubic-bezier(0.22,1,0.36,1) forwards, floatSlow 7s ease-in-out 1.25s infinite; animation-delay: 0.25s; opacity: 0; }
         .h-float  { animation: floatSlow 7s ease-in-out infinite; }
         .h-breathe { animation: breathe 4s ease-in-out infinite; }
         .h-scroll-bounce { animation: scrollBounce 2s ease-in-out infinite; }
@@ -278,20 +278,16 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT: Photo */}
-        <div className="relative flex items-center justify-center lg:w-[45%] min-h-[400px] lg:min-h-0 py-10 lg:py-0 z-10">
+        <div className="relative flex items-center justify-center lg:w-[45%] min-h-[520px] lg:min-h-0 py-10 lg:py-0 z-10">
 
           <div
-            className="absolute inset-8 rounded-[40px] h-breathe"
-            style={{ background: "linear-gradient(145deg, #EDE8DC 0%, rgba(201,160,160,0.35) 100%)" }}
-          />
-
-          <div
-            className="h-img h-float photo-frame relative z-10 w-48 sm:w-56 lg:w-[220px] xl:w-[240px]"
+            className="h-img photo-frame relative z-10 w-72 sm:w-80 lg:w-[340px] xl:w-[380px]"
             style={{
               transform: `perspective(800px) rotateY(${mousePos.x * -4}deg) rotateX(${mousePos.y * 2}deg)`,
               transition: "transform 0.15s ease-out",
             }}
           >
+            {/* Corner brackets */}
             <div
               className="absolute -top-4 -left-4 w-10 h-10"
               style={{ borderTop: "2px solid #6B2737", borderLeft: "2px solid #6B2737", borderRadius: "4px 0 0 0" }}
@@ -300,27 +296,21 @@ export default function HeroSection() {
               className="absolute -bottom-4 -right-4 w-10 h-10"
               style={{ borderBottom: "2px solid #6B2737", borderRight: "2px solid #6B2737", borderRadius: "0 0 4px 0" }}
             />
-            <div
-              className="absolute -top-6 -left-6 w-full h-full rounded-3xl"
-              style={{ border: "1px solid rgba(201,160,160,0.35)" }}
-            />
 
+            {/* Image — fills frame completely, no leftover space */}
             <div
-              className="relative overflow-hidden rounded-3xl"
+              className="overflow-hidden rounded-3xl"
               style={{ boxShadow: "0 32px 80px rgba(107,39,55,0.22), 0 8px 24px rgba(107,39,55,0.1)" }}
             >
               <img
                 src="/headshot-1.png"
                 alt="Zainab Shaffi — Operations & Executive Support Specialist"
-                className="w-full h-auto block object-cover object-top"
-                style={{ aspectRatio: "3/4" }}
-              />
-              <div
-                className="absolute bottom-0 left-0 right-0 h-32"
-                style={{ background: "linear-gradient(to top, rgba(107,39,55,0.15), transparent)" }}
+                className="w-full block"
+                style={{ display: "block", aspectRatio: "3/4", objectFit: "cover", objectPosition: "top" }}
               />
             </div>
 
+            {/* Name card at bottom */}
             <div
               className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-2xl text-center whitespace-nowrap"
               style={{ backgroundColor: "#6B2737", boxShadow: "0 10px 32px rgba(107,39,55,0.32)" }}
@@ -336,44 +326,6 @@ export default function HeroSection() {
                 style={{ color: "rgba(250,248,245,0.65)", fontFamily: "'Inter', sans-serif" }}
               >
                 Operations Specialist
-              </p>
-            </div>
-
-            <div
-              className="absolute -top-5 -right-5 px-3.5 py-2.5 rounded-2xl text-center"
-              style={{
-                backgroundColor: "#EDE8DC",
-                boxShadow: "0 6px 20px rgba(107,39,55,0.14)",
-                border: "1px solid rgba(201,160,160,0.4)",
-              }}
-            >
-              <p
-                className="text-xl font-bold leading-none"
-                style={{ color: "#6B2737", fontFamily: "'Playfair Display', serif" }}
-              >
-                15+
-              </p>
-              <p
-                className="text-[9px] uppercase tracking-wide mt-1"
-                style={{ color: "rgba(44,26,31,0.55)", fontFamily: "'Inter', sans-serif" }}
-              >
-                Hours saved
-              </p>
-            </div>
-
-            <div
-              className="absolute -left-8 top-1/3 px-3 py-2 rounded-xl"
-              style={{
-                backgroundColor: "rgba(107,39,55,0.08)",
-                border: "1px solid rgba(107,39,55,0.15)",
-                backdropFilter: "blur(8px)",
-              }}
-            >
-              <p
-                className="text-[10px] font-semibold uppercase tracking-[0.12em]"
-                style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}
-              >
-                ✦ Remote-Ready
               </p>
             </div>
           </div>
