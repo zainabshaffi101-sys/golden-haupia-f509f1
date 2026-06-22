@@ -342,7 +342,7 @@ export default function HeroSection() {
               style={{ boxShadow: "0 32px 80px rgba(107,39,55,0.22), 0 8px 24px rgba(107,39,55,0.1)" }}
             >
               <img
-                src="/headshot-1.PNG"
+                src="/headshot-1.png"
                 alt="Zainab Shaffi — Operations & Executive Support Specialist"
                 className="w-full h-auto block object-cover object-top"
                 style={{ aspectRatio: "3/4" }}
