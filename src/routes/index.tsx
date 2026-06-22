@@ -66,7 +66,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://calendar.app.google/wGTfkEAtLUwzgZuS9" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors" style={{ color: 'rgba(43,37,39,0.6)' }}
+                <a href="https://calendar.app.google/MQziGAszQY8wVMqp9" target="_blank" rel="noopener noreferrer" className="text-sm transition-colors" style={{ color: 'rgba(43,37,39,0.6)' }}
                   onMouseEnter={(e) => (e.currentTarget as HTMLAnchorElement).style.color = '#4A1E2F'}
                   onMouseLeave={(e) => (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(43,37,39,0.6)'}>
                   Book a Discovery Call
