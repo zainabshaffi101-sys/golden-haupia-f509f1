@@ -344,7 +344,7 @@ export default function HeroSection() {
               <img
                 src="/headshot-1.png"
                 alt="Zainab Shaffi — Operations & Executive Support Specialist"
-                className="w-full h-auto block object-cover object-top"
+                className="w-full"
                 style={{ aspectRatio: "3/4" }}
               />
               <div
