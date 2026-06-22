@@ -1,214 +1,374 @@
-import { Mail, Linkedin, MapPin, Calendar, Clock } from "lucide-react";
+import { Mail, Linkedin, MapPin, Calendar, Clock, Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+function useInView(threshold = 0.12) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect(); } }, { threshold });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return { ref, inView };
+}
+
+const inputBase: React.CSSProperties = {
+  border: "1.5px solid rgba(201,160,160,0.35)",
+  backgroundColor: "#FAF8F5",
+  color: "#2B2527",
+  fontFamily: "'Inter', sans-serif",
+  fontSize: "0.875rem",
+  borderRadius: "12px",
+  padding: "12px 16px",
+  width: "100%",
+  outline: "none",
+  transition: "all 0.2s ease",
+};
+
+function Field({ id, label, required, children }: { id: string; label: string; required?: boolean; children: React.ReactNode }) {
+  return (
+    <div>
+      <label
+        htmlFor={id}
+        className="block text-sm font-semibold mb-2"
+        style={{ color: "#2C1A1F", fontFamily: "'Inter', sans-serif" }}
+      >
+        {label} {required && <span style={{ color: "#C9A0A0" }}>*</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
 
 export default function ContactSection() {
+  const { ref, inView } = useInView();
+  const [focused, setFocused] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const focusStyle = (name: string): React.CSSProperties => ({
+    ...inputBase,
+    borderColor: focused === name ? "#6B2737" : "rgba(201,160,160,0.35)",
+    boxShadow: focused === name ? "0 0 0 3px rgba(107,39,55,0.1)" : "none",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <section id="contact" className="relative py-24 lg:py-32" style={{ backgroundColor: "#F7F4EB" }}>
-      {/* Subtle top border accent */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, #8C5369 30%, #8C5369 70%, transparent)" }} />
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap');
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Section header */}
-        <div className="mb-16 max-w-2xl">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 flex-shrink-0" style={{ backgroundColor: "#8C5369" }} />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: "#8C5369" }}>
-              Get In Touch
-            </span>
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-reveal { opacity: 0; }
+        .contact-reveal.in { animation: revealUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+
+        .info-card {
+          transition: all 0.28s cubic-bezier(0.22,1,0.36,1);
+        }
+        .info-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(107,39,55,0.12) !important;
+        }
+
+        .submit-btn {
+          transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+          position: relative;
+          overflow: hidden;
+        }
+        .submit-btn::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.1);
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(107,39,55,0.3); }
+        .submit-btn:hover::before { opacity: 1; }
+        .submit-btn:active { transform: translateY(0); }
+
+        .book-card {
+          transition: all 0.28s cubic-bezier(0.22,1,0.36,1);
+        }
+        .book-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(107,39,55,0.35) !important;
+        }
+      `}</style>
+
+      <section
+        id="contact"
+        className="relative py-28 lg:py-36"
+        style={{ backgroundColor: "#EDE8DC" }}
+      >
+        {/* Top accent line */}
+        <div
+          className="absolute top-0 left-0 right-0 h-[1.5px]"
+          style={{ background: "linear-gradient(to right, transparent, rgba(201,160,160,0.6) 30%, rgba(201,160,160,0.6) 70%, transparent)" }}
+        />
+
+        <div className="max-w-6xl mx-auto px-6 lg:px-8" ref={ref}>
+
+          {/* Header */}
+          <div className={`contact-reveal ${inView ? "in" : ""} mb-16 max-w-2xl`} style={{ animationDelay: "0.05s" }}>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-[1.5px] w-8 flex-shrink-0" style={{ backgroundColor: "#C9A0A0" }} />
+              <span
+                className="text-xs font-semibold uppercase tracking-[0.22em]"
+                style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}
+              >
+                Get In Touch
+              </span>
+            </div>
+            <h2
+              className="leading-[1.15] mb-5"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.9rem, 3.8vw, 3.2rem)",
+                color: "#2C1A1F",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Let's Create{" "}
+              <span style={{ color: "#6B2737", fontStyle: "italic" }}>Better Systems</span>
+            </h2>
+            <p
+              className="text-base sm:text-lg leading-relaxed"
+              style={{ color: "rgba(44,26,31,0.65)", fontFamily: "'Inter', sans-serif", lineHeight: "1.8" }}
+            >
+              Ready to spend less time managing operations and more time growing your business? Let's connect.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight tracking-tight mb-5" style={{ color: "#4A1E2F" }}>
-            Let's Create Better Systems
-          </h2>
-          <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#2B2527", opacity: 0.75 }}>
-            Ready to spend less time managing operations and more time growing your business? Let's connect.
-          </p>
-        </div>
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-start">
-          {/* Left: Contact Form */}
-          <div
-            className="relative rounded-2xl p-8 sm:p-10"
-            style={{ backgroundColor: "#FFFFFF", boxShadow: "0 4px 24px rgba(74,30,47,0.07)" }}
-          >
-            {/* Corner accent */}
+          {/* Two-column */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start">
+
+            {/* LEFT: Form */}
             <div
-              className="absolute top-0 left-0 w-10 h-10 rounded-tl-2xl"
-              style={{ borderTop: "2px solid #4A1E2F", borderLeft: "2px solid #4A1E2F" }}
-            />
+              className={`contact-reveal ${inView ? "in" : ""} relative rounded-3xl p-8 sm:p-10`}
+              style={{
+                animationDelay: "0.15s",
+                backgroundColor: "#FFFFFF",
+                boxShadow: "0 4px 32px rgba(107,39,55,0.08), 0 1px 4px rgba(107,39,55,0.05)",
+              }}
+            >
+              {/* Corner bracket */}
+              <div
+                className="absolute top-0 left-0 w-10 h-10"
+                style={{ borderTop: "2px solid #6B2737", borderLeft: "2px solid #6B2737", borderRadius: "12px 0 0 0" }}
+              />
 
-            <form action="" method="POST" className="space-y-6">
-              {/* Name */}
-              <div>
-                <label htmlFor="contact-name" className="block text-sm font-semibold mb-2" style={{ color: "#4A1E2F" }}>
-                  Full Name <span style={{ color: "#8C5369" }}>*</span>
-                </label>
-                <input
-                  id="contact-name" name="name" type="text" required placeholder="Your name"
-                  className="w-full rounded-lg px-4 py-3 text-sm transition-all duration-200 outline-none"
-                  style={{ border: "1.5px solid #D9CECE", backgroundColor: "#F7F4EB", color: "#2B2527" }}
-                  onFocus={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#4A1E2F";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(74,30,47,0.12)";
-                  }}
-                  onBlur={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#D9CECE";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "none";
-                  }}
-                />
-              </div>
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-16 text-center gap-5">
+                  <div
+                    className="w-16 h-16 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(107,39,55,0.1)" }}
+                  >
+                    <Send className="w-7 h-7" style={{ color: "#6B2737" }} />
+                  </div>
+                  <h3
+                    className="text-xl font-bold"
+                    style={{ color: "#2C1A1F", fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Message Sent!
+                  </h3>
+                  <p className="text-sm max-w-xs" style={{ color: "rgba(44,26,31,0.6)", fontFamily: "'Inter', sans-serif" }}>
+                    Thank you for reaching out. I'll get back to you within 24 hours.
+                  </p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-sm font-semibold underline underline-offset-4"
+                    style={{ color: "#6B2737", fontFamily: "'Inter', sans-serif" }}
+                  >
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <Field id="contact-name" label="Full Name" required>
+                      <input
+                        id="contact-name" name="name" type="text" required placeholder="Your name"
+                        style={focusStyle("name")}
+                        onFocus={() => setFocused("name")}
+                        onBlur={() => setFocused(null)}
+                      />
+                    </Field>
+                    <Field id="contact-email" label="Email Address" required>
+                      <input
+                        id="contact-email" name="email" type="email" required placeholder="you@company.com"
+                        style={focusStyle("email")}
+                        onFocus={() => setFocused("email")}
+                        onBlur={() => setFocused(null)}
+                      />
+                    </Field>
+                  </div>
+
+                  <Field id="contact-company" label="Company / Business Name">
+                    <input
+                      id="contact-company" name="company" type="text" placeholder="Your company (optional)"
+                      style={focusStyle("company")}
+                      onFocus={() => setFocused("company")}
+                      onBlur={() => setFocused(null)}
+                    />
+                  </Field>
+
+                  <Field id="contact-service" label="What do you need help with?">
+                    <select
+                      id="contact-service" name="service"
+                      style={focusStyle("service")}
+                      onFocus={() => setFocused("service")}
+                      onBlur={() => setFocused(null)}
+                    >
+                      <option value="">Select a service</option>
+                      <option>Calendar & Time Management</option>
+                      <option>Workflow & Systems Design</option>
+                      <option>Inbox & Communication Management</option>
+                      <option>Project Coordination</option>
+                      <option>Executive / Virtual Assistant Support</option>
+                      <option>Other</option>
+                    </select>
+                  </Field>
+
+                  <Field id="contact-message" label="Tell me more" required>
+                    <textarea
+                      id="contact-message" name="message" rows={5} required
+                      placeholder="Describe your challenges, goals, or what you'd like to improve..."
+                      style={{ ...focusStyle("message"), resize: "none" }}
+                      onFocus={() => setFocused("message")}
+                      onBlur={() => setFocused(null)}
+                    />
+                  </Field>
+
+                  <button
+                    type="submit"
+                    className="submit-btn w-full rounded-xl px-6 py-4 text-sm font-bold flex items-center justify-center gap-2.5"
+                    style={{ backgroundColor: "#6B2737", color: "#FAF8F5", fontFamily: "'Inter', sans-serif" }}
+                  >
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* RIGHT: Info cards */}
+            <div className={`contact-reveal ${inView ? "in" : ""} flex flex-col gap-4`} style={{ animationDelay: "0.28s" }}>
 
               {/* Email */}
-              <div>
-                <label htmlFor="contact-email" className="block text-sm font-semibold mb-2" style={{ color: "#4A1E2F" }}>
-                  Email Address <span style={{ color: "#8C5369" }}>*</span>
-                </label>
-                <input
-                  id="contact-email" name="email" type="email" required placeholder="you@company.com"
-                  className="w-full rounded-lg px-4 py-3 text-sm transition-all duration-200 outline-none"
-                  style={{ border: "1.5px solid #D9CECE", backgroundColor: "#F7F4EB", color: "#2B2527" }}
-                  onFocus={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#4A1E2F";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(74,30,47,0.12)";
-                  }}
-                  onBlur={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#D9CECE";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "none";
-                  }}
-                />
-              </div>
-
-              {/* Company */}
-              <div>
-                <label htmlFor="contact-company" className="block text-sm font-semibold mb-2" style={{ color: "#4A1E2F" }}>
-                  Company / Business Name
-                </label>
-                <input
-                  id="contact-company" name="company" type="text" placeholder="Your company (optional)"
-                  className="w-full rounded-lg px-4 py-3 text-sm transition-all duration-200 outline-none"
-                  style={{ border: "1.5px solid #D9CECE", backgroundColor: "#F7F4EB", color: "#2B2527" }}
-                  onFocus={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#4A1E2F";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(74,30,47,0.12)";
-                  }}
-                  onBlur={(e) => {
-                    (e.currentTarget as HTMLInputElement).style.borderColor = "#D9CECE";
-                    (e.currentTarget as HTMLInputElement).style.boxShadow = "none";
-                  }}
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="contact-message" className="block text-sm font-semibold mb-2" style={{ color: "#4A1E2F" }}>
-                  How can I help? <span style={{ color: "#8C5369" }}>*</span>
-                </label>
-                <textarea
-                  id="contact-message" name="message" rows={5} required
-                  placeholder="Tell me about your business challenges, goals, or what you'd like to improve..."
-                  className="w-full rounded-lg px-4 py-3 text-sm transition-all duration-200 outline-none resize-none"
-                  style={{ border: "1.5px solid #D9CECE", backgroundColor: "#F7F4EB", color: "#2B2527" }}
-                  onFocus={(e) => {
-                    (e.currentTarget as HTMLTextAreaElement).style.borderColor = "#4A1E2F";
-                    (e.currentTarget as HTMLTextAreaElement).style.boxShadow = "0 0 0 3px rgba(74,30,47,0.12)";
-                  }}
-                  onBlur={(e) => {
-                    (e.currentTarget as HTMLTextAreaElement).style.borderColor = "#D9CECE";
-                    (e.currentTarget as HTMLTextAreaElement).style.boxShadow = "none";
-                  }}
-                />
-              </div>
-
-              {/* Submit */}
-              <button
-                type="submit"
-                className="w-full rounded-lg px-6 py-4 text-sm font-bold tracking-wide transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-                style={{ backgroundColor: "#4A1E2F", color: "#F7F4EB" }}
+              <a
+                href="mailto:zainabshaffi101@gmail.com"
+                className="info-card flex items-center gap-4 rounded-2xl p-5"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  border: "1px solid rgba(201,160,160,0.3)",
+                  boxShadow: "0 2px 10px rgba(107,39,55,0.05)",
+                  textDecoration: "none",
+                }}
               >
-                Send Message
-              </button>
-            </form>
-          </div>
+                <div
+                  className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(107,39,55,0.08)" }}
+                >
+                  <Mail className="w-5 h-5" style={{ color: "#6B2737" }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}>Email</p>
+                  <p className="text-sm font-semibold" style={{ color: "#2C1A1F", fontFamily: "'Inter', sans-serif" }}>zainabshaffi101@gmail.com</p>
+                </div>
+              </a>
 
-          {/* Right: Contact Info Cards */}
-          <div className="flex flex-col gap-4">
-            {/* Email card */}
-            <div
-              className="flex items-start gap-4 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "#FFFFFF", border: "1.5px solid #D9CECE", boxShadow: "0 2px 10px rgba(74,30,47,0.05)" }}
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#4A1E2F" }}>
-                <Mail className="w-4.5 h-4.5" style={{ color: "#F7F4EB" }} />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "#8C5369" }}>Email</p>
-                <a href="mailto:zainabshaffi101@gmail.com" className="text-sm font-medium transition-colors duration-150 hover:underline" style={{ color: "#4A1E2F" }}>
-                  zainabshaffi101@gmail.com
-                </a>
-              </div>
-            </div>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/zainab-adejoke-shaffi-1479ba35a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="info-card flex items-center gap-4 rounded-2xl p-5"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  border: "1px solid rgba(201,160,160,0.3)",
+                  boxShadow: "0 2px 10px rgba(107,39,55,0.05)",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(107,39,55,0.08)" }}
+                >
+                  <Linkedin className="w-5 h-5" style={{ color: "#6B2737" }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}>LinkedIn</p>
+                  <p className="text-sm font-semibold" style={{ color: "#2C1A1F", fontFamily: "'Inter', sans-serif" }}>Zainab Adejoke Shaffi</p>
+                </div>
+              </a>
 
-            {/* LinkedIn card */}
-            <div
-              className="flex items-start gap-4 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "#DDD5C8", border: "1.5px solid #4A1E2F", boxShadow: "0 4px 16px rgba(74,30,47,0.18)" }}
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#4A1E2F" }}>
-                <Linkedin className="w-4.5 h-4.5" style={{ color: "#8C5369" }} />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "#8C5369" }}>LinkedIn</p>
-                <a href="https://linkedin.com/in/zainab-adejoke-shaffi-1479ba35a" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-opacity duration-150 hover:opacity-75" style={{ color: "#4A1E2F" }}>
-                  linkedin.com/in/zainab-adejoke-shaffi-1479ba35a
-                </a>
-              </div>
-            </div>
-
-            {/* Location card */}
-            <div
-              className="flex items-start gap-4 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: "#FFFFFF", border: "1.5px solid #D9CECE", boxShadow: "0 2px 10px rgba(74,30,47,0.05)" }}
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#4A1E2F" }}>
-                <MapPin className="w-4.5 h-4.5" style={{ color: "#F7F4EB" }} />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "#8C5369" }}>Location</p>
-                <p className="text-sm font-medium" style={{ color: "#4A1E2F" }}>Available Worldwide</p>
-                <p className="text-xs mt-0.5" style={{ color: "#2B2527", opacity: 0.6 }}>Remote</p>
-              </div>
-            </div>
-
-            {/* Calendly CTA */}
-            <a
-              href="#"
-              className="group flex items-center gap-4 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              style={{ backgroundColor: "#4A1E2F", boxShadow: "0 6px 20px rgba(74,30,47,0.22)" }}
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(140,83,105,0.25)" }}>
-                <Calendar className="w-4.5 h-4.5" style={{ color: "#8C5369" }} />
-              </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "rgba(255,255,255,0.55)" }}>Schedule a Call</p>
-                <p className="text-sm font-bold" style={{ color: "#FFFFFF" }}>Book a Discovery Call</p>
-              </div>
+              {/* Location */}
               <div
-                className="w-7 h-7 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:translate-x-1"
-                style={{ backgroundColor: "#8C5369" }}
+                className="info-card flex items-center gap-4 rounded-2xl p-5"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  border: "1px solid rgba(201,160,160,0.3)",
+                  boxShadow: "0 2px 10px rgba(107,39,55,0.05)",
+                }}
               >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5" stroke="#F7F4EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <div
+                  className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(107,39,55,0.08)" }}
+                >
+                  <MapPin className="w-5 h-5" style={{ color: "#6B2737" }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#C9A0A0", fontFamily: "'Inter', sans-serif" }}>Location</p>
+                  <p className="text-sm font-semibold" style={{ color: "#2C1A1F", fontFamily: "'Inter', sans-serif" }}>Nigeria · Remote Worldwide</p>
+                </div>
               </div>
-            </a>
 
-            {/* Response time note */}
-            <div className="flex items-center gap-2.5 px-2 py-1">
-              <Clock className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#8C5369" }} />
-              <p className="text-xs" style={{ color: "#2B2527", opacity: 0.6 }}>Typically responds within 24 hours</p>
+              {/* Book a Call CTA */}
+              <a
+                href="https://calendar.app.google/MQziGAszQY8wVMqp9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="book-card flex items-center gap-4 rounded-2xl p-5"
+                style={{
+                  backgroundColor: "#6B2737",
+                  boxShadow: "0 8px 24px rgba(107,39,55,0.28)",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
+                >
+                  <Calendar className="w-5 h-5" style={{ color: "#FAF8F5" }} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-0.5" style={{ color: "rgba(250,248,245,0.55)", fontFamily: "'Inter', sans-serif" }}>Free · 30 minutes</p>
+                  <p className="text-sm font-bold" style={{ color: "#FAF8F5", fontFamily: "'Inter', sans-serif" }}>Book a Discovery Call</p>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="rgba(250,248,245,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+              {/* Response time */}
+              <div className="flex items-center gap-2 px-1 mt-1">
+                <Clock className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#C9A0A0" }} />
+                <p className="text-xs" style={{ color: "rgba(44,26,31,0.5)", fontFamily: "'Inter', sans-serif" }}>
+                  Typically responds within 24 hours
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
